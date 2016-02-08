@@ -1,89 +1,76 @@
-<!DOCTYPE html><html prefix="og: http://ogp.me/ns#"><head><meta charset="UTF-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQYCUVNXCxAHXFNRAgkF"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(){}function r(t){function e(t){return t&&t instanceof n?t:t?a(t,i,o):o()}function s(n,r,o){t&&t(n,r,o);for(var i=e(o),a=f(n),s=a.length,c=0;s>c;c++)a[c].apply(i,r);return i}function c(t,e){d[t]=f(t).concat(e)}function f(t){return d[t]||[]}function u(){return r(s)}var d={};return{on:c,emit:s,create:u,listeners:f,context:e,_events:d}}function o(){return new n}var i="nr@context",a=t("gos");e.exports=r()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:25,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,a){try{f?f-=1:r("err",[a||new UncaughtException(t,e,n)])}catch(c){try{r("ierr",[c,(new Date).getTime(),!0])}catch(u){}}return"function"==typeof s?s.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=t("loader"),s=window.onerror,c=!1,f=0;a.features.err=!0,t(5),window.onerror=e;try{throw new Error}catch(u){"stack"in u&&(t(1),t(2),"addEventListener"in window&&t(3),a.xhrWrappable&&t(4),c=!0)}i.on("fn-start",function(){c&&(f+=1)}),i.on("fn-err",function(t,e,r){c&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){c&&!this.thrown&&f>0&&(f-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:11,2:10,3:8,4:12,5:3,6:26,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t){if(window.addEventListener){var e=t("handle"),n=t("ee");t(1),window.addEventListener("click",function(){e("inc",["ck"])},!1),window.addEventListener("hashchange",function(){e("inc",["hc"])},!1),n.on("pushState-start",function(){e("inc",["ps"])})}},{1:9,ee:"QJf3ax",handle:"D5DuLP"}],6:[function(t){t("loader").features.ins=!0},{loader:"G9z0Bl"}],7:[function(t){function e(){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var n=t("ee"),r=t("handle"),o=t(1),i=t(2);t("loader").features.stn=!0,t(3);var a=Event;n.on("fn-start",function(t){var e=t[0];e instanceof a&&(this.bstStart=Date.now())}),n.on("fn-end",function(t,e){var n=t[0];n instanceof a&&r("bst",[n,e,this.bstStart,Date.now()])}),o.on("fn-start",function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),o.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),this.bstType])}),i.on("fn-start",function(){this.bstStart=Date.now()}),i.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),n.on("pushState-start",function(){this.time=Date.now(),this.startPath=location.pathname+location.hash}),n.on("pushState-end",function(){r("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),"addEventListener"in window.performance&&(window.performance.clearResourceTimings?window.performance.addEventListener("resourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.clearResourceTimings()},!1):window.performance.addEventListener("webkitresourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.webkitClearResourceTimings()},!1)),document.addEventListener("scroll",e,!1),document.addEventListener("keypress",e,!1),document.addEventListener("click",e,!1)}},{1:11,2:10,3:9,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){function n(t){for(var e=t;e&&!e.hasOwnProperty("addEventListener");)e=Object.getPrototypeOf(e);e&&r(e)}function r(t){a.inPlace(t,["addEventListener","removeEventListener"],"-",o)}function o(t){return t[1]}var i=t("ee").create(),a=t(1)(i),s=t("gos");e.exports=i,r(window),"getPrototypeOf"in Object?(n(document),n(XMLHttpRequest.prototype)):XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&r(XMLHttpRequest.prototype),i.on("addEventListener-start",function(t){if(t[1]){var e=t[1];if("function"==typeof e){var n=s(e,"nr@wrapped",function(){return a(e,"fn-",null,e.name||"anonymous")});this.wrapped=t[1]=n}else"function"==typeof e.handleEvent&&a.inPlace(e,["handleEvent"],"fn-")}}),i.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:27,ee:"QJf3ax",gos:"7eSDFh"}],9:[function(t,e){var n=t("ee").create(),r=t(1)(n);e.exports=n,r.inPlace(window.history,["pushState","replaceState"],"-")},{1:27,ee:"QJf3ax"}],10:[function(t,e){var n=t("ee").create(),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:27,ee:"QJf3ax"}],11:[function(t,e){function n(t,e,n){t[0]=i(t[0],"fn-",null,n)}function r(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=i(t[0],"fn-",this,n)}var o=t("ee").create(),i=t(1)(o);e.exports=o,i.inPlace(window,["setTimeout","setImmediate"],"setTimer-"),i.inPlace(window,["setInterval"],"setInterval-"),i.inPlace(window,["clearTimeout","clearImmediate"],"clearTimeout-"),o.on("setInterval-start",n),o.on("setTimer-start",r)},{1:27,ee:"QJf3ax"}],12:[function(t,e){function n(){f.inPlace(this,l,"fn-",o)}function r(t,e){f.inPlace(e,["onreadystatechange"],"fn-",o)}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),f=c(a),u=c(s),d=window.XMLHttpRequest,l=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[e],e),e.hasOwnProperty("addEventListener")&&u.inPlace(e,["addEventListener","removeEventListener"],"-",o),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(i){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,f.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:8,2:27,ee:"QJf3ax"}],13:[function(t){function e(t){var e=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var o=0;u>o;o++)t.removeEventListener(f[o],this.listener,!1);if(!e.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=this.lastSize||n(t);if(i&&(r.rxSize=i),this.sameOrigin){var s=t.getResponseHeader("X-NewRelic-App-Data");s&&(e.cat=s.split(", ").pop())}}else e.status=0;r.cbTime=this.cbTime,c.emit("xhr-done",[t],t),a("xhr",[e,r,this.startTime])}}}function n(t){var e=t.responseType,n="arraybuffer"===e||"blob"===e||"json"===e?t.response:t.responseText;return r(n)}function r(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function o(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var i=t("loader");if(i.xhrWrappable){var a=t("handle"),s=t(2),c=t("ee"),f=["load","error","abort","timeout"],u=f.length,d=t(1),l=t(3),p=window.XMLHttpRequest;i.features.xhr=!0,t(5),t(4),c.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=e,n.ended=!1,n.xhrGuids={},n.lastSize=0,l&&(l>34||10>l)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),c.on("open-xhr-start",function(t){this.params={method:t[0]},o(this,t[1]),this.metrics={}}),c.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),c.on("send-xhr-start",function(t,e){var n=this.metrics,o=t[0],i=this;if(n&&o){var a=r(o);a&&(n.txSize=a)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{c.emit("internal-error",[n])}catch(r){}}};for(var s=0;u>s;s++)e.addEventListener(f[s],this.listener,!1)}),c.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),c.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),c.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),c.on("addEventListener-end",function(t,e){e instanceof p&&"load"===t[0]&&c.emit("xhr-load-added",[t[1],t[2]],e)}),c.on("removeEventListener-end",function(t,e){e instanceof p&&"load"===t[0]&&c.emit("xhr-load-removed",[t[1],t[2]],e)}),c.on("fn-start",function(t,e,n){e instanceof p&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),c.on("fn-end",function(t,e){this.xhrCbStart&&c.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:14,3:16,4:12,5:8,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],14:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],15:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:25,2:26,handle:"D5DuLP"}],16:[function(t,e){var n=0,r=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);r&&(n=+r[1]),e.exports=n},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):void(r.q&&(r.q[t]||(r.q[t]=[]),r.q[t].push(e)))}var r=t("ee").create();e.exports=n,n.ee=r,r.q={}},{ee:"QJf3ax"}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],G9z0Bl:[function(t,e){function n(){if(!h++){var t=p.info=NREUM.info,e=f.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){s(d,function(e,n){t[e]||(t[e]=n)});var n="https"===u.split(":")[0]||t.sslForHttp;p.proto=n?"https://":"http://",a("mark",["onload",i()]);var r=f.createElement("script");r.src=p.proto+t.agent,e.parentNode.insertBefore(r,e)}}}function r(){"complete"===f.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=window,f=c.document;t(2);var u=(""+location).split("?")[0],d={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-852.min.js"},l=window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent),p=e.exports={offset:i(),origin:u,features:{},xhrWrappable:l};f.addEventListener?(f.addEventListener("DOMContentLoaded",o,!1),c.addEventListener("load",n,!1)):(f.attachEvent("onreadystatechange",r),c.attachEvent("onload",n)),a("mark",["firstbyte",i()]);var h=0},{1:25,2:15,handle:"D5DuLP"}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],25:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],26:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],27:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@original",a=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,c;try{i=this,n=o(arguments),s="function"==typeof r?r(n,i):r||{}}catch(u){d([u,"",[n,i,a],s])}f(e+"start",[n,i,a],s);try{return c=t.apply(i,n)}catch(l){throw f(e+"err",[n,i,l],s),l}finally{f(e+"end",[n,i,c],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=t,u(t,nrWrapper),nrWrapper)}function c(t,r,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,f?s+o:o,i,s))}function f(e,n,r){if(!s){s=!0;try{t.emit(e,n,r)}catch(o){d([o,e,n,r])}s=!1}}function u(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){d([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function d(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=c,e.flag=i,e}},{1:26,ee:"QJf3ax"}]},{},["G9z0Bl",4,13,7,6,5]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"74aa540d10","agent":"","transactionName":"MVJTbRRQWRVZVEMMXAgYd0wIUkMPV1kYDVYHUx9PD1RAFQJeWQFWHg==","applicationID":"7823582","errorBeacon":"bam.nr-data.net","applicationTime":39}</script><meta http-equiv="preview-refresh" content="86400" /><meta name="robots" content="noodp" /><meta name="robots" content="noyaca" /><title>Рамблер - медийный портал</title><meta name="description" content="Премиальный медийно-сервисный портал. Электронная почта. Поиск информации в интернете. Погода. Для деловых людей: новости, финансы, недвижимость, авто, супермаркет. Развлекательные и коммуникационные сервисы: афиша, лайфстайл, гороскопы, игры, видео, ТВ-программа" /><meta name="keywords" content="медийный портал, электронная почта, поиск информации в интернете" /><meta property="og:title" content="Премиальный медийно-сервисный портал Рамблер" /><meta property="og:description" content="Премиальный медийно-сервисный портал. Электронная почта. Поиск информации в интернете. Погода. Для деловых людей: новости, финансы, недвижимость, авто, супермаркет. Развлекательные и коммуникационные сервисы: афиша, лайфстайл, гороскопы, игры, видео, ТВ-программа" /><meta property="og:url" content="http://www.rambler.ru/" /><meta property="og:type" content="website" /><meta property="og:locale" content="ru_RU" /><meta property="og:site_name" content="Рамблер" /><meta property="og:image" content="http://h03.rl0.ru/3.21.25/i/og/main.png" /><meta property="og:image:width" content="1024" /><meta property="og:image:height" content="538" /><link href="http://h03.rl0.ru/3.21.25/styles.min.css" rel="stylesheet" /><link href="http://h03.rl0.ru/3.21.25/favicon.ico" rel="shortcut icon" /><link href="http://h03.rl0.ru/3.21.25/i/rambler_onSpeedDial.png" rel="apple-touch-icon" type="image/png" /><link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/bicofajmgfmdjlcfdmkadheighomkhlc" /><link rel="alternate" media="only screen and (max-width: 640px)" href="http://m.rambler.ru" /><link rel="canonical" href="http://www.rambler.ru/" /><script src="//lib.rl0.ru/jquery/1.7.1/jquery.min.js"></script><script src="//counter.rambler.ru/pack/pack.min.js"></script><script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript"></script><script>
-        if (typeof console === 'undefined' || typeof console.log === 'undefined') {
-            window.console = {
-                'log': function() {}
-            };
-        }
-    </script><script>
-        window.ramblerHead = {
+<!DOCTYPE html><html prefix="og: http://ogp.me/ns#"><head><meta charset="UTF-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" /><script type="text/javascript">(window.NREUM || (NREUM = {})).loader_config = {xpid:"VQYCUVNXCxAHXFNRAgkF"}; window.NREUM || (NREUM = {}), __nr_require = function(t, e, n){function r(n){if (!e[n]){var o = e[n] = {exports:{}}; t[n][0].call(o.exports, function(e){var o = t[n][1][e]; return r(o || e)}, o, o.exports)}return e[n].exports}if ("function" == typeof __nr_require)return __nr_require; for (var o = 0; o < n.length; o++)r(n[o]); return r}({QJf3ax:[function(t, e){function n(){}function r(t){function e(t){return t && t instanceof n?t:t?a(t, i, o):o()}function s(n, r, o){t && t(n, r, o); for (var i = e(o), a = f(n), s = a.length, c = 0; s > c; c++)a[c].apply(i, r); return i}function c(t, e){d[t] = f(t).concat(e)}function f(t){return d[t] || []}function u(){return r(s)}var d = {}; return{on:c, emit:s, create:u, listeners:f, context:e, _events:d}}function o(){return new n}var i = "nr@context", a = t("gos"); e.exports = r()}, {gos:"7eSDFh"}], ee:[function(t, e){e.exports = t("QJf3ax")}, {}], 3:[function(t){function e(t){try{i.console && console.log(t)} catch (e){}}var n, r = t("ee"), o = t(1), i = {}; try{n = localStorage.getItem("__nr_flags").split(","), console && "function" == typeof console.log && (i.console = !0, - 1 !== n.indexOf("dev") && (i.dev = !0), - 1 !== n.indexOf("nr_dev") && (i.nrDev = !0))} catch (a){}i.nrDev && r.on("internal-error", function(t){e(t.stack)}), i.dev && r.on("fn-err", function(t, n, r){e(r.stack)}), i.dev && (e("NR AGENT IN DEVELOPMENT MODE"), e("flags: " + o(i, function(t){return t}).join(", ")))}, {1:25, ee:"QJf3ax"}], 4:[function(t){function e(t, e, n, i, a){try{f?f -= 1:r("err", [a || new UncaughtException(t, e, n)])} catch (c){try{r("ierr", [c, (new Date).getTime(), !0])} catch (u){}}return"function" == typeof s?s.apply(this, o(arguments)):!1}function UncaughtException(t, e, n){this.message = t || "Uncaught error with no additional information", this.sourceURL = e, this.line = n}function n(t){r("err", [t, (new Date).getTime()])}var r = t("handle"), o = t(6), i = t("ee"), a = t("loader"), s = window.onerror, c = !1, f = 0; a.features.err = !0, t(5), window.onerror = e; try{throw new Error} catch (u){"stack"in u && (t(1), t(2), "addEventListener"in window && t(3), a.xhrWrappable && t(4), c = !0)}i.on("fn-start", function(){c && (f += 1)}), i.on("fn-err", function(t, e, r){c && (this.thrown = !0, n(r))}), i.on("fn-end", function(){c && !this.thrown && f > 0 && (f -= 1)}), i.on("internal-error", function(t){r("ierr", [t, (new Date).getTime(), !0])})}, {1:11, 2:10, 3:8, 4:12, 5:3, 6:26, ee:"QJf3ax", handle:"D5DuLP", loader:"G9z0Bl"}], 5:[function(t){if (window.addEventListener){var e = t("handle"), n = t("ee"); t(1), window.addEventListener("click", function(){e("inc", ["ck"])}, !1), window.addEventListener("hashchange", function(){e("inc", ["hc"])}, !1), n.on("pushState-start", function(){e("inc", ["ps"])})}}, {1:9, ee:"QJf3ax", handle:"D5DuLP"}], 6:[function(t){t("loader").features.ins = !0}, {loader:"G9z0Bl"}], 7:[function(t){function e(){}if (window.performance && window.performance.timing && window.performance.getEntriesByType){var n = t("ee"), r = t("handle"), o = t(1), i = t(2); t("loader").features.stn = !0, t(3); var a = Event; n.on("fn-start", function(t){var e = t[0]; e instanceof a && (this.bstStart = Date.now())}), n.on("fn-end", function(t, e){var n = t[0]; n instanceof a && r("bst", [n, e, this.bstStart, Date.now()])}), o.on("fn-start", function(t, e, n){this.bstStart = Date.now(), this.bstType = n}), o.on("fn-end", function(t, e){r("bstTimer", [e, this.bstStart, Date.now(), this.bstType])}), i.on("fn-start", function(){this.bstStart = Date.now()}), i.on("fn-end", function(t, e){r("bstTimer", [e, this.bstStart, Date.now(), "requestAnimationFrame"])}), n.on("pushState-start", function(){this.time = Date.now(), this.startPath = location.pathname + location.hash}), n.on("pushState-end", function(){r("bstHist", [location.pathname + location.hash, this.startPath, this.time])}), "addEventListener"in window.performance && (window.performance.clearResourceTimings?window.performance.addEventListener("resourcetimingbufferfull", function(){r("bstResource", [window.performance.getEntriesByType("resource")]), window.performance.clearResourceTimings()}, !1):window.performance.addEventListener("webkitresourcetimingbufferfull", function(){r("bstResource", [window.performance.getEntriesByType("resource")]), window.performance.webkitClearResourceTimings()}, !1)), document.addEventListener("scroll", e, !1), document.addEventListener("keypress", e, !1), document.addEventListener("click", e, !1)}}, {1:11, 2:10, 3:9, ee:"QJf3ax", handle:"D5DuLP", loader:"G9z0Bl"}], 8:[function(t, e){function n(t){for (var e = t; e && !e.hasOwnProperty("addEventListener"); )e = Object.getPrototypeOf(e); e && r(e)}function r(t){a.inPlace(t, ["addEventListener", "removeEventListener"], "-", o)}function o(t){return t[1]}var i = t("ee").create(), a = t(1)(i), s = t("gos"); e.exports = i, r(window), "getPrototypeOf"in Object?(n(document), n(XMLHttpRequest.prototype)):XMLHttpRequest.prototype.hasOwnProperty("addEventListener") && r(XMLHttpRequest.prototype), i.on("addEventListener-start", function(t){if (t[1]){var e = t[1]; if ("function" == typeof e){var n = s(e, "nr@wrapped", function(){return a(e, "fn-", null, e.name || "anonymous")}); this.wrapped = t[1] = n} else"function" == typeof e.handleEvent && a.inPlace(e, ["handleEvent"], "fn-")}}), i.on("removeEventListener-start", function(t){var e = this.wrapped; e && (t[1] = e)})}, {1:27, ee:"QJf3ax", gos:"7eSDFh"}], 9:[function(t, e){var n = t("ee").create(), r = t(1)(n); e.exports = n, r.inPlace(window.history, ["pushState", "replaceState"], "-")}, {1:27, ee:"QJf3ax"}], 10:[function(t, e){var n = t("ee").create(), r = t(1)(n); e.exports = n, r.inPlace(window, ["requestAnimationFrame", "mozRequestAnimationFrame", "webkitRequestAnimationFrame", "msRequestAnimationFrame"], "raf-"), n.on("raf-start", function(t){t[0] = r(t[0], "fn-")})}, {1:27, ee:"QJf3ax"}], 11:[function(t, e){function n(t, e, n){t[0] = i(t[0], "fn-", null, n)}function r(t, e, n){this.method = n, this.timerDuration = "number" == typeof t[1]?t[1]:0, t[0] = i(t[0], "fn-", this, n)}var o = t("ee").create(), i = t(1)(o); e.exports = o, i.inPlace(window, ["setTimeout", "setImmediate"], "setTimer-"), i.inPlace(window, ["setInterval"], "setInterval-"), i.inPlace(window, ["clearTimeout", "clearImmediate"], "clearTimeout-"), o.on("setInterval-start", n), o.on("setTimer-start", r)}, {1:27, ee:"QJf3ax"}], 12:[function(t, e){function n(){f.inPlace(this, l, "fn-", o)}function r(t, e){f.inPlace(e, ["onreadystatechange"], "fn-", o)}function o(t, e){return e}function i(t, e){for (var n in t)e[n] = t[n]; return e}var a = t("ee").create(), s = t(1), c = t(2), f = c(a), u = c(s), d = window.XMLHttpRequest, l = ["onload", "onerror", "onabort", "onloadstart", "onloadend", "onprogress", "ontimeout"]; e.exports = a, window.XMLHttpRequest = function(t){var e = new d(t); try{a.emit("new-xhr", [e], e), e.hasOwnProperty("addEventListener") && u.inPlace(e, ["addEventListener", "removeEventListener"], "-", o), e.addEventListener("readystatechange", n, !1)} catch (r){try{a.emit("internal-error", [r])} catch (i){}}return e}, i(d, XMLHttpRequest), XMLHttpRequest.prototype = d.prototype, f.inPlace(XMLHttpRequest.prototype, ["open", "send"], "-xhr-", o), a.on("send-xhr-start", r), a.on("open-xhr-start", r)}, {1:8, 2:27, ee:"QJf3ax"}], 13:[function(t){function e(t){var e = this.params, r = this.metrics; if (!this.ended){this.ended = !0; for (var o = 0; u > o; o++)t.removeEventListener(f[o], this.listener, !1); if (!e.aborted){if (r.duration = (new Date).getTime() - this.startTime, 4 === t.readyState){e.status = t.status; var i = this.lastSize || n(t); if (i && (r.rxSize = i), this.sameOrigin){var s = t.getResponseHeader("X-NewRelic-App-Data"); s && (e.cat = s.split(", ").pop())}} else e.status = 0; r.cbTime = this.cbTime, c.emit("xhr-done", [t], t), a("xhr", [e, r, this.startTime])}}}function n(t){var e = t.responseType, n = "arraybuffer" === e || "blob" === e || "json" === e?t.response:t.responseText; return r(n)}function r(t){if ("string" == typeof t && t.length)return t.length; if ("object" != typeof t)return void 0; if ("undefined" != typeof ArrayBuffer && t instanceof ArrayBuffer && t.byteLength)return t.byteLength; if ("undefined" != typeof Blob && t instanceof Blob && t.size)return t.size; if ("undefined" != typeof FormData && t instanceof FormData)return void 0; try{return JSON.stringify(t).length} catch (e){return void 0}}function o(t, e){var n = s(e), r = t.params; r.host = n.hostname + ":" + n.port, r.pathname = n.pathname, t.sameOrigin = n.sameOrigin}var i = t("loader"); if (i.xhrWrappable){var a = t("handle"), s = t(2), c = t("ee"), f = ["load", "error", "abort", "timeout"], u = f.length, d = t(1), l = t(3), p = window.XMLHttpRequest; i.features.xhr = !0, t(5), t(4), c.on("new-xhr", function(t){var n = this; n.totalCbs = 0, n.called = 0, n.cbTime = 0, n.end = e, n.ended = !1, n.xhrGuids = {}, n.lastSize = 0, l && (l > 34 || 10 > l) || window.opera || t.addEventListener("progress", function(t){n.lastSize = t.loaded}, !1)}), c.on("open-xhr-start", function(t){this.params = {method:t[0]}, o(this, t[1]), this.metrics = {}}), c.on("open-xhr-end", function(t, e){"loader_config"in NREUM && "xpid"in NREUM.loader_config && this.sameOrigin && e.setRequestHeader("X-NewRelic-ID", NREUM.loader_config.xpid)}), c.on("send-xhr-start", function(t, e){var n = this.metrics, o = t[0], i = this; if (n && o){var a = r(o); a && (n.txSize = a)}this.startTime = (new Date).getTime(), this.listener = function(t){try{"abort" === t.type && (i.params.aborted = !0), ("load" !== t.type || i.called === i.totalCbs && (i.onloadCalled || "function" != typeof e.onload)) && i.end(e)} catch (n){try{c.emit("internal-error", [n])} catch (r){}}}; for (var s = 0; u > s; s++)e.addEventListener(f[s], this.listener, !1)}), c.on("xhr-cb-time", function(t, e, n){this.cbTime += t, e?this.onloadCalled = !0:this.called += 1, this.called !== this.totalCbs || !this.onloadCalled && "function" == typeof n.onload || this.end(n)}), c.on("xhr-load-added", function(t, e){var n = "" + d(t) + !!e; this.xhrGuids && !this.xhrGuids[n] && (this.xhrGuids[n] = !0, this.totalCbs += 1)}), c.on("xhr-load-removed", function(t, e){var n = "" + d(t) + !!e; this.xhrGuids && this.xhrGuids[n] && (delete this.xhrGuids[n], this.totalCbs -= 1)}), c.on("addEventListener-end", function(t, e){e instanceof p && "load" === t[0] && c.emit("xhr-load-added", [t[1], t[2]], e)}), c.on("removeEventListener-end", function(t, e){e instanceof p && "load" === t[0] && c.emit("xhr-load-removed", [t[1], t[2]], e)}), c.on("fn-start", function(t, e, n){e instanceof p && ("onload" === n && (this.onload = !0), ("load" === (t[0] && t[0].type) || this.onload) && (this.xhrCbStart = (new Date).getTime()))}), c.on("fn-end", function(t, e){this.xhrCbStart && c.emit("xhr-cb-time", [(new Date).getTime() - this.xhrCbStart, this.onload, e], e)})}}, {1:"XL7HBI", 2:14, 3:16, 4:12, 5:8, ee:"QJf3ax", handle:"D5DuLP", loader:"G9z0Bl"}], 14:[function(t, e){e.exports = function(t){var e = document.createElement("a"), n = window.location, r = {}; e.href = t, r.port = e.port; var o = e.href.split("://"); !r.port && o[1] && (r.port = o[1].split("/")[0].split("@").pop().split(":")[1]), r.port && "0" !== r.port || (r.port = "https" === o[0]?"443":"80"), r.hostname = e.hostname || n.hostname, r.pathname = e.pathname, r.protocol = o[0], "/" !== r.pathname.charAt(0) && (r.pathname = "/" + r.pathname); var i = !e.protocol || ":" === e.protocol || e.protocol === n.protocol, a = e.hostname === document.domain && e.port === n.port; return r.sameOrigin = i && (!e.hostname || a), r}}, {}], 15:[function(t, e){function n(t){return function(){r(t, [(new Date).getTime()].concat(i(arguments)))}}var r = t("handle"), o = t(1), i = t(2); "undefined" == typeof window.newrelic && (newrelic = window.NREUM); var a = ["setPageViewName", "addPageAction", "setCustomAttribute", "finished", "addToTrace", "inlineHit", "noticeError"]; o(a, function(t, e){window.NREUM[e] = n("api-" + e)}), e.exports = window.NREUM}, {1:25, 2:26, handle:"D5DuLP"}], 16:[function(t, e){var n = 0, r = navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/); r && (n = + r[1]), e.exports = n}, {}], gos:[function(t, e){e.exports = t("7eSDFh")}, {}], "7eSDFh":[function(t, e){function n(t, e, n){if (r.call(t, e))return t[e]; var o = n(); if (Object.defineProperty && Object.keys)try{return Object.defineProperty(t, e, {value:o, writable:!0, enumerable:!1}), o} catch (i){}return t[e] = o, o}var r = Object.prototype.hasOwnProperty; e.exports = n}, {}], D5DuLP:[function(t, e){function n(t, e, n){return r.listeners(t).length?r.emit(t, e, n):void(r.q && (r.q[t] || (r.q[t] = []), r.q[t].push(e)))}var r = t("ee").create(); e.exports = n, n.ee = r, r.q = {}}, {ee:"QJf3ax"}], handle:[function(t, e){e.exports = t("D5DuLP")}, {}], XL7HBI:[function(t, e){function n(t){var e = typeof t; return!t || "object" !== e && "function" !== e? - 1:t === window?0:i(t, o, function(){return r++})}var r = 1, o = "nr@id", i = t("gos"); e.exports = n}, {gos:"7eSDFh"}], id:[function(t, e){e.exports = t("XL7HBI")}, {}], G9z0Bl:[function(t, e){function n(){if (!h++){var t = p.info = NREUM.info, e = f.getElementsByTagName("script")[0]; if (t && t.licenseKey && t.applicationID && e){s(d, function(e, n){t[e] || (t[e] = n)}); var n = "https" === u.split(":")[0] || t.sslForHttp; p.proto = n?"https://":"http://", a("mark", ["onload", i()]); var r = f.createElement("script"); r.src = p.proto + t.agent, e.parentNode.insertBefore(r, e)}}}function r(){"complete" === f.readyState && o()}function o(){a("mark", ["domContent", i()])}function i(){return(new Date).getTime()}var a = t("handle"), s = t(1), c = window, f = c.document; t(2); var u = ("" + location).split("?")[0], d = {beacon:"bam.nr-data.net", errorBeacon:"bam.nr-data.net", agent:"js-agent.newrelic.com/nr-852.min.js"}, l = window.XMLHttpRequest && XMLHttpRequest.prototype && XMLHttpRequest.prototype.addEventListener && !/CriOS/.test(navigator.userAgent), p = e.exports = {offset:i(), origin:u, features:{}, xhrWrappable:l}; f.addEventListener?(f.addEventListener("DOMContentLoaded", o, !1), c.addEventListener("load", n, !1)):(f.attachEvent("onreadystatechange", r), c.attachEvent("onload", n)), a("mark", ["firstbyte", i()]); var h = 0}, {1:25, 2:15, handle:"D5DuLP"}], loader:[function(t, e){e.exports = t("G9z0Bl")}, {}], 25:[function(t, e){function n(t, e){var n = [], o = "", i = 0; for (o in t)r.call(t, o) && (n[i] = e(o, t[o]), i += 1); return n}var r = Object.prototype.hasOwnProperty; e.exports = n}, {}], 26:[function(t, e){function n(t, e, n){e || (e = 0), "undefined" == typeof n && (n = t?t.length:0); for (var r = - 1, o = n - e || 0, i = Array(0 > o?0:o); ++r < o; )i[r] = t[e + r]; return i}e.exports = n}, {}], 27:[function(t, e){function n(t){return!(t && "function" == typeof t && t.apply && !t[i])}var r = t("ee"), o = t(1), i = "nr@original", a = Object.prototype.hasOwnProperty, s = !1; e.exports = function(t){function e(t, e, r, a){function nrWrapper(){var n, i, s, c; try{i = this, n = o(arguments), s = "function" == typeof r?r(n, i):r || {}} catch (u){d([u, "", [n, i, a], s])}f(e + "start", [n, i, a], s); try{return c = t.apply(i, n)} catch (l){throw f(e + "err", [n, i, l], s), l} finally{f(e + "end", [n, i, c], s)}}return n(t)?t:(e || (e = ""), nrWrapper[i] = t, u(t, nrWrapper), nrWrapper)}function c(t, r, o, i){o || (o = ""); var a, s, c, f = "-" === o.charAt(0); for (c = 0; c < r.length; c++)s = r[c], a = t[s], n(a) || (t[s] = e(a, f?s + o:o, i, s))}function f(e, n, r){if (!s){s = !0; try{t.emit(e, n, r)} catch (o){d([o, e, n, r])}s = !1}}function u(t, e){if (Object.defineProperty && Object.keys)try{var n = Object.keys(t); return n.forEach(function(n){Object.defineProperty(e, n, {get:function(){return t[n]}, set:function(e){return t[n] = e, e}})}), e} catch (r){d([r])}for (var o in t)a.call(t, o) && (e[o] = t[o]); return e}function d(e){try{t.emit("internal-error", e)} catch (n){}}return t || (t = r), e.inPlace = c, e.flag = i, e}}, {1:26, ee:"QJf3ax"}]}, {}, ["G9z0Bl", 4, 13, 7, 6, 5]);</script><script type="text/javascript">window.NREUM || (NREUM = {}); NREUM.info = {"beacon":"bam.nr-data.net", "queueTime":0, "licenseKey":"74aa540d10", "agent":"", "transactionName":"MVJTbRRQWRVZVEMMXAgYd0wIUkMPV1kYDVYHUx9PD1RAFQJeWQFWHg==", "applicationID":"7823582", "errorBeacon":"bam.nr-data.net", "applicationTime":39}</script><meta http-equiv="preview-refresh" content="86400" /><meta name="robots" content="noodp" /><meta name="robots" content="noyaca" /><title>Рамблер - медийный портал</title><meta name="description" content="Премиальный медийно-сервисный портал. Электронная почта. Поиск информации в интернете. Погода. Для деловых людей: новости, финансы, недвижимость, авто, супермаркет. Развлекательные и коммуникационные сервисы: афиша, лайфстайл, гороскопы, игры, видео, ТВ-программа" /><meta name="keywords" content="медийный портал, электронная почта, поиск информации в интернете" /><meta property="og:title" content="Премиальный медийно-сервисный портал Рамблер" /><meta property="og:description" content="Премиальный медийно-сервисный портал. Электронная почта. Поиск информации в интернете. Погода. Для деловых людей: новости, финансы, недвижимость, авто, супермаркет. Развлекательные и коммуникационные сервисы: афиша, лайфстайл, гороскопы, игры, видео, ТВ-программа" /><meta property="og:url" content="http://www.rambler.ru/" /><meta property="og:type" content="website" /><meta property="og:locale" content="ru_RU" /><meta property="og:site_name" content="Рамблер" /><meta property="og:image" content="http://h03.rl0.ru/3.21.25/i/og/main.png" /><meta property="og:image:width" content="1024" /><meta property="og:image:height" content="538" /><link href="http://h03.rl0.ru/3.21.25/styles.min.css" rel="stylesheet" /><link href="http://h03.rl0.ru/3.21.25/favicon.ico" rel="shortcut icon" /><link href="http://h03.rl0.ru/3.21.25/i/rambler_onSpeedDial.png" rel="apple-touch-icon" type="image/png" /><link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/bicofajmgfmdjlcfdmkadheighomkhlc" /><link rel="alternate" media="only screen and (max-width: 640px)" href="http://m.rambler.ru" /><link rel="canonical" href="http://www.rambler.ru/" /><script src="//lib.rl0.ru/jquery/1.7.1/jquery.min.js"></script><script src="//counter.rambler.ru/pack/pack.min.js"></script><script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript"></script><script>
+            if (typeof console === 'undefined' || typeof console.log === 'undefined') {
+    window.console = {
+    'log': function() {}
+    };
+    }
+        </script><script>
+            window.ramblerHead = {
             currentSection: 'main',
-            splits: {
-                yatraffic: 0
-            },
-            weatherTemperature:  -1 
-        };
-    </script><!--[if lte IE 8]><script src="http://h03.rl0.ru/3.21.25/js/backgroundSizeFixer.min.js"></script><![endif]--><script>
-        var _prum = [['id', '54b78fd8abe53da8350a11cd'],
-                    ['mark', 'firstbyte', (new Date()).getTime()]];
-        (function() {
-            var s = document.getElementsByTagName('script')[0]
-              , p = document.createElement('script');
+                    splits: {
+                    yatraffic: 0
+                    },
+                    weatherTemperature: - 1
+            };</script><!--[if lte IE 8]><script src="http://h03.rl0.ru/3.21.25/js/backgroundSizeFixer.min.js"></script><![endif]--><script>
+                        var _prum = [['id', '54b78fd8abe53da8350a11cd'],
+                                ['mark', 'firstbyte', (new Date()).getTime()]];
+                        (function() {
+                        var s = document.getElementsByTagName('script')[0]
+                                , p = document.createElement('script');
+                                p.async = 'async';
+                                p.src = '//rum-static.pingdom.net/prum.min.js';
+                                s.parentNode.insertBefore(p, s);
+                        })();</script><script type="text/javascript">
+                                    try {
 
-            p.async = 'async';
-            p.src = '//rum-static.pingdom.net/prum.min.js';
-            s.parentNode.insertBefore(p, s);
-        })();
-    </script><script type="text/javascript">
-        try {
-            
-            window.yaCounter28161048 = new window.Ya.Metrika({
-                id:28161048,
-                clickmap:true,
-                trackLinks:true,
-                accurateTrackBounce:true
-            });
+                                    window.yaCounter28161048 = new window.Ya.Metrika({
+                                    id:28161048,
+                                            clickmap:true,
+                                            trackLinks:true,
+                                            accurateTrackBounce:true
+                                    });
+                                            window.yaCounter25662806 = new window.Ya.Metrika({
+                                            id:25662806,
+                                                    clickmap:true,
+                                                    trackLinks:true,
+                                                    accurateTrackBounce:true
+                                            });
+                                            window.yaCounter26649402 = new window.Ya.Metrika({
+                                            id:26649402,
+                                                    clickmap:true,
+                                                    trackLinks:true,
+                                                    accurateTrackBounce:true
+                                            });
+                                            window.yaCounter30002544 = new window.Ya.Metrika({
+                                            id:30002544,
+                                                    clickmap:true,
+                                                    trackLinks:true,
+                                                    accurateTrackBounce:true
+                                            });
+                                    } catch (e) { }
+        </script><noscript><div><img src="//mc.yandex.ru/watch/28161048" style="position:absolute; left:-9999px;" alt="" /></div></noscript><noscript><div><img src="//mc.yandex.ru/watch/25662806" style="position:absolute; left:-9999px;" alt="" /></div></noscript><noscript><div><img src="//mc.yandex.ru/watch/26649402" style="position:absolute; left:-9999px;" alt="" /></div></noscript><noscript><div><img src="//mc.yandex.ru/watch/30002544" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- Google Analytics --><script>
+            (function(i, s, o, g, r, a, m){i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function(){
+            (i[r].q = i[r].q || []).push(arguments)}, i[r].l = 1 * new Date(); a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+                    ga('create', 'UA-18802658-1', 'auto');
+                    ga('send', 'pageview');</script><!-- End Google Analytics --><script type='text/javascript'>
+                                var crtg_nid = '3102';
+                                var crtg_cookiename = 'crtg_rta';
+                                var crtg_varname = 'crtg_content';
+                                function crtg_getCookie(c_name){ var i, x, y, ARRCookies = document.cookie.split(";"); for (i = 0; i < ARRCookies.length; i++){x = ARRCookies[i].substr(0, ARRCookies[i].indexOf("=")); y = ARRCookies[i].substr(ARRCookies[i].indexOf("=") + 1); x = x.replace(/^\s+|\s+$/g, ""); if (x == c_name){return unescape(y); } }return''; }
+                        var crtg_content = crtg_getCookie(crtg_cookiename);
+                                var crtg_rnd = Math.floor(Math.random() * 99999999999);
+                                (function(){
+                                var crtg_url = location.protocol + '//rtax.criteo.com/delivery/rta/rta.js?netId=' + escape(crtg_nid);
+                                        crtg_url += '&cookieName=' + escape(crtg_cookiename);
+                                        crtg_url += '&rnd=' + crtg_rnd;
+                                        crtg_url += '&varName=' + escape(crtg_varname);
+                                        var crtg_script = document.createElement('script'); crtg_script.type = 'text/javascript'; crtg_script.src = crtg_url; crtg_script.async = true;
+                                        if (document.getElementsByTagName("head").length > 0)document.getElementsByTagName("head")[0].appendChild(crtg_script);
+                                        else if (document.getElementsByTagName("body").length > 0)document.getElementsByTagName("body")[0].appendChild(crtg_script);
+                                })();</script>
 
-            
-            window.yaCounter25662806 = new window.Ya.Metrika({
-                id:25662806,
-                clickmap:true,
-                trackLinks:true,
-                accurateTrackBounce:true
-            });
-
-            
-            window.yaCounter26649402 = new window.Ya.Metrika({
-                id:26649402,
-                clickmap:true,
-                trackLinks:true,
-                accurateTrackBounce:true
-            });
-
-            
-            window.yaCounter30002544 = new window.Ya.Metrika({
-                id:30002544,
-                clickmap:true,
-                trackLinks:true,
-                accurateTrackBounce:true
-            });
-        } catch(e) { }
-    </script><noscript><div><img src="//mc.yandex.ru/watch/28161048" style="position:absolute; left:-9999px;" alt="" /></div></noscript><noscript><div><img src="//mc.yandex.ru/watch/25662806" style="position:absolute; left:-9999px;" alt="" /></div></noscript><noscript><div><img src="//mc.yandex.ru/watch/26649402" style="position:absolute; left:-9999px;" alt="" /></div></noscript><noscript><div><img src="//mc.yandex.ru/watch/30002544" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- Google Analytics --><script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-18802658-1', 'auto');
-    ga('send', 'pageview');
-
-    </script><!-- End Google Analytics --><script type='text/javascript'>
-        var crtg_nid = '3102';
-        var crtg_cookiename = 'crtg_rta';
-        var crtg_varname = 'crtg_content';
-        function crtg_getCookie(c_name){ var i,x,y,ARRCookies=document.cookie.split(";");for(i=0;i<ARRCookies.length;i++){x=ARRCookies[i].substr(0,ARRCookies[i].indexOf("="));y=ARRCookies[i].substr(ARRCookies[i].indexOf("=")+1);x=x.replace(/^\s+|\s+$/g,"");if(x==c_name){return unescape(y);} }return'';}
-        var crtg_content = crtg_getCookie(crtg_cookiename);
-        var crtg_rnd=Math.floor(Math.random()*99999999999);
-        (function(){
-        var crtg_url=location.protocol+'//rtax.criteo.com/delivery/rta/rta.js?netId='+escape(crtg_nid);
-        crtg_url +='&cookieName='+escape(crtg_cookiename);
-        crtg_url +='&rnd='+crtg_rnd;
-        crtg_url +='&varName=' + escape(crtg_varname);
-        var crtg_script=document.createElement('script');crtg_script.type='text/javascript';crtg_script.src=crtg_url;crtg_script.async=true;
-        if(document.getElementsByTagName("head").length>0)document.getElementsByTagName("head")[0].appendChild(crtg_script);
-        else if(document.getElementsByTagName("body").length>0)document.getElementsByTagName("body")[0].appendChild(crtg_script);
-        })();
-    </script>
-    
 
     <script src="http://h03.rl0.ru/3.21.25/js/ads.js"></script>
     <script type="text/javascript" src="//autocontext.begun.ru/feed_fetcher.min.js"></script>
@@ -95,658 +82,642 @@
 <body itemscope itemtype="http://schema.org/WebPage">
     <div class="adfox-ad" id="adfox-topline"></div><script>(new window.ramblerHead.adfoxLoader('topline'))</script><!-- back02 -->
 
-<link rel="stylesheet" href="//topline.rambler.ru/static/bba0df0b21c465da0ba970ea7f218ccc3362419d/dist/topline.min.css" type="text/css" />
-<link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/bicofajmgfmdjlcfdmkadheighomkhlc" />
-
-
-    
-            
-        
-
-
-
-    
+    <link rel="stylesheet" href="//topline.rambler.ru/static/bba0df0b21c465da0ba970ea7f218ccc3362419d/dist/topline.min.css" type="text/css" />
+    <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/bicofajmgfmdjlcfdmkadheighomkhlc" />
 
 
 
 
 
-	
 
 
 
-	
-
-
-<div class="b-rambler-topline b-rambler-topline_dark b-rambler-topline_full b-rambler-topline_project_head  "
-	data-cerber-topline="dark"
->
-	<div class="b-rambler-topline__section-top-wrap">
-		<div class="b-rambler-topline__inner">
-			<div class="b-rambler-topline__section-top">
-
-                
-					<div class="b-rambler-topline-set_start">
-						<span class="b-rambler-topline-projects__item"
-							onclick="chrome.webstore.install()"
-						>Сделать стартовой
-						</span>
-					</div>
-                
-
-				<div class="b-rambler-topline__projects b-rambler-topline-projects"
-					data-cerber-topline="projects"
-				>
-					
-
-	
 
 
 
-	
-    <a href="http://www.rambler.ru/?utm_content=head&utm_medium=topline&utm_source=rambler" class="b-rambler-topline-projects__item"
-        
-        
-        data-tesla-goal="head"
-        data-cerber-topline="head"
-    >
-        
-            Рамблер
-        
-    </a>
-
-
-	
-    <a href="https://mail.rambler.ru/?utm_content=mail&utm_medium=topline&utm_source=rambler" class="b-rambler-topline-projects__item"
-        
-        
-        data-tesla-goal="mail"
-        data-cerber-topline="mail"
-    >
-        
-            
-                <span>Почта</span>
-                
-            
-        
-    </a>
-
-
-	
-    <a href="http://news.rambler.ru/?utm_content=news&utm_medium=topline&utm_source=rambler" class="b-rambler-topline-projects__item"
-        
-        
-        data-tesla-goal="news"
-        data-cerber-topline="news"
-    >
-        
-            Новости
-        
-    </a>
-
-
-	
-    <a href="http://finance.rambler.ru/?utm_content=finance&utm_medium=topline&utm_source=rambler" class="b-rambler-topline-projects__item"
-        
-        
-        data-tesla-goal="finance"
-        data-cerber-topline="finance"
-    >
-        
-            Финансы
-        
-    </a>
-
-
-	
-    <a href="https://realty.rambler.ru/?utm_content=realty&utm_medium=topline&utm_source=rambler" class="b-rambler-topline-projects__item"
-        
-        
-        data-tesla-goal="realty"
-        data-cerber-topline="realty"
-    >
-        
-            Недвижимость
-        
-    </a>
-
-
-	
-    <a href="http://autorambler.ru/?utm_content=autorambler&utm_medium=topline&utm_source=rambler" class="b-rambler-topline-projects__item"
-        
-        
-        data-tesla-goal="autorambler"
-        data-cerber-topline="autorambler"
-    >
-        
-            Авто
-        
-    </a>
-
-
-	
-    <a href="http://travel.rambler.ru/?utm_content=travel&utm_medium=topline&utm_source=rambler" class="b-rambler-topline-projects__item"
-        
-        
-        data-tesla-goal="travel"
-        data-cerber-topline="travel"
-    >
-        
-            Путешествия
-        
-    </a>
-
-
-	
-    <a href="http://video.rambler.ru/?utm_content=video&utm_medium=topline&utm_source=rambler" class="b-rambler-topline-projects__item"
-        
-        
-        data-tesla-goal="video"
-        data-cerber-topline="video"
-    >
-        
-            Видео
-        
-    </a>
 
 
 
-	<div class="b-rambler-topline-projects__item b-rambler-topline-projects__item_more"
-		data-tesla-goal="more"
-		data-cerber-topline="more"
-	>
-		<a class="b-rambler-topline-projects__item js-rambler-topline-projects-more" href="http://www.rambler.ru/all/">Еще</a>
-		<div class="b-rambler-topline-projects__dropdown b-rambler-topline-projects-item-dropdown">
-			<div class="b-rambler-topline-projects-item-dropdown__section">
-				
-					
-					<div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
-						
-    <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
-        <a href="http://soft.rambler.ru/browser/?utm_content=browser&utm_medium=topline&utm_source=rambler&rpid=r131s" class="b-rambler-topline-projects-item-dropdown__item"
-            
-            
-            data-tesla-goal="browser"
-            data-cerber-topline="browser"
-        >Браузер</a>
+
+
+
+
+
+
+
+    <div class="b-rambler-topline b-rambler-topline_dark b-rambler-topline_full b-rambler-topline_project_head  "
+         data-cerber-topline="dark"
+         >
+        <div class="b-rambler-topline__section-top-wrap">
+            <div class="b-rambler-topline__inner">
+                <div class="b-rambler-topline__section-top">
+
+
+                    <div class="b-rambler-topline-set_start">
+                        <span class="b-rambler-topline-projects__item"
+                              onclick="chrome.webstore.install()"
+                              >Сделать стартовой
+                        </span>
+                    </div>
+
+
+                    <div class="b-rambler-topline__projects b-rambler-topline-projects"
+                         data-cerber-topline="projects"
+                         >
+
+
+
+
+
+
+
+                        <a href="http://www.rambler.ru/?utm_content=head&utm_medium=topline&utm_source=rambler" class="b-rambler-topline-projects__item"
+
+
+                           data-tesla-goal="head"
+                           data-cerber-topline="head"
+                           >
+
+                            Рамблер
+
+                        </a>
+
+
+
+                        <a href="https://mail.rambler.ru/?utm_content=mail&utm_medium=topline&utm_source=rambler" class="b-rambler-topline-projects__item"
+
+
+                           data-tesla-goal="mail"
+                           data-cerber-topline="mail"
+                           >
+
+
+                            <span>Почта</span>
+
+
+
+                        </a>
+
+
+
+                        <a href="http://news.rambler.ru/?utm_content=news&utm_medium=topline&utm_source=rambler" class="b-rambler-topline-projects__item"
+
+
+                           data-tesla-goal="news"
+                           data-cerber-topline="news"
+                           >
+
+                            Новости
+
+                        </a>
+
+
+
+                        <a href="http://finance.rambler.ru/?utm_content=finance&utm_medium=topline&utm_source=rambler" class="b-rambler-topline-projects__item"
+
+
+                           data-tesla-goal="finance"
+                           data-cerber-topline="finance"
+                           >
+
+                            Финансы
+
+                        </a>
+
+
+
+                        <a href="https://realty.rambler.ru/?utm_content=realty&utm_medium=topline&utm_source=rambler" class="b-rambler-topline-projects__item"
+
+
+                           data-tesla-goal="realty"
+                           data-cerber-topline="realty"
+                           >
+
+                            Недвижимость
+
+                        </a>
+
+
+
+                        <a href="http://autorambler.ru/?utm_content=autorambler&utm_medium=topline&utm_source=rambler" class="b-rambler-topline-projects__item"
+
+
+                           data-tesla-goal="autorambler"
+                           data-cerber-topline="autorambler"
+                           >
+
+                            Авто
+
+                        </a>
+
+
+
+                        <a href="http://travel.rambler.ru/?utm_content=travel&utm_medium=topline&utm_source=rambler" class="b-rambler-topline-projects__item"
+
+
+                           data-tesla-goal="travel"
+                           data-cerber-topline="travel"
+                           >
+
+                            Путешествия
+
+                        </a>
+
+
+
+                        <a href="http://video.rambler.ru/?utm_content=video&utm_medium=topline&utm_source=rambler" class="b-rambler-topline-projects__item"
+
+
+                           data-tesla-goal="video"
+                           data-cerber-topline="video"
+                           >
+
+                            Видео
+
+                        </a>
+
+
+
+                        <div class="b-rambler-topline-projects__item b-rambler-topline-projects__item_more"
+                             data-tesla-goal="more"
+                             data-cerber-topline="more"
+                             >
+                            <a class="b-rambler-topline-projects__item js-rambler-topline-projects-more" href="http://www.rambler.ru/all/">Еще</a>
+                            <div class="b-rambler-topline-projects__dropdown b-rambler-topline-projects-item-dropdown">
+                                <div class="b-rambler-topline-projects-item-dropdown__section">
+
+
+                                    <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
+
+                                        <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
+                                            <a href="http://soft.rambler.ru/browser/?utm_content=browser&utm_medium=topline&utm_source=rambler&rpid=r131s" class="b-rambler-topline-projects-item-dropdown__item"
+
+
+                                               data-tesla-goal="browser"
+                                               data-cerber-topline="browser"
+                                               >Браузер</a>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
+
+                                        <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
+                                            <a href="http://horoscopes.rambler.ru/?utm_content=horoscopes&utm_medium=topline&utm_source=rambler" class="b-rambler-topline-projects-item-dropdown__item"
+
+
+                                               data-tesla-goal="horoscopes"
+                                               data-cerber-topline="horoscopes"
+                                               >Гороскопы</a>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
+
+                                        <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
+                                            <a href="http://money.rambler.ru/?utm_content=money&utm_medium=topline&utm_source=rambler" class="b-rambler-topline-projects-item-dropdown__item"
+
+
+                                               data-tesla-goal="money"
+                                               data-cerber-topline="money"
+                                               >Деньги</a>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
+
+                                        <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
+                                            <a href="http://love.rambler.ru/?utm_content=love&utm_medium=topline&utm_source=rambler" class="b-rambler-topline-projects-item-dropdown__item"
+
+
+                                               data-tesla-goal="love"
+                                               data-cerber-topline="love"
+                                               >Знакомства</a>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
+
+                                        <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
+                                            <a href="http://kassa.rambler.ru/?utm_content=kassa&utm_medium=topline&utm_source=rambler" class="b-rambler-topline-projects-item-dropdown__item"
+
+
+                                               data-tesla-goal="kassa"
+                                               data-cerber-topline="kassa"
+                                               >Касса</a>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
+
+                                        <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
+                                            <a href="http://r0.ru/?topline=1&utm_content=r0&utm_medium=topline&utm_source=rambler" class="b-rambler-topline-projects-item-dropdown__item"
+
+
+                                               data-tesla-goal="search"
+                                               data-cerber-topline="search"
+                                               >Поиск</a>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
+
+                                        <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
+                                            <a href="http://weather.rambler.ru/?utm_content=weather&utm_medium=topline&utm_source=rambler" class="b-rambler-topline-projects-item-dropdown__item"
+
+
+                                               data-tesla-goal="weather"
+                                               data-cerber-topline="weather"
+                                               >Погода</a>
+                                        </div>
+
+                                    </div>
+
+                                </div><!--
+                                --><div class="b-rambler-topline-projects-item-dropdown__section">
+
+
+                                    <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
+
+                                        <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
+                                            <a href="http://audio.rambler.ru/?utm_content=audio&utm_medium=topline&utm_source=rambler" class="b-rambler-topline-projects-item-dropdown__item"
+
+
+                                               data-tesla-goal="radio"
+                                               data-cerber-topline="radio"
+                                               >Радио</a>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
+
+                                        <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
+                                            <a href="http://family.rambler.ru/?utm_content=family&utm_medium=topline&utm_source=rambler" class="b-rambler-topline-projects-item-dropdown__item"
+
+
+                                               data-tesla-goal="r_family"
+                                               data-cerber-topline="r_family"
+                                               >Семья</a>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
+
+                                        <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
+                                            <a href="http://soft.rambler.ru/?utm_content=soft&utm_medium=topline&utm_source=rambler&rpid=r131s" class="b-rambler-topline-projects-item-dropdown__item"
+
+
+                                               data-tesla-goal="soft"
+                                               data-cerber-topline="soft"
+                                               >Софт</a>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
+
+                                        <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
+                                            <a href="http://weekend.rambler.ru/?utm_content=weekend&utm_medium=topline&utm_source=rambler" class="b-rambler-topline-projects-item-dropdown__item"
+
+
+                                               data-tesla-goal="weekend"
+                                               data-cerber-topline="weekend"
+                                               >Субботний Рамблер</a>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
+
+                                        <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
+                                            <a href="http://supermarket.rambler.ru/?utm_content=supermarket&utm_medium=topline&utm_source=rambler" class="b-rambler-topline-projects-item-dropdown__item"
+
+
+                                               data-tesla-goal="supermarket"
+                                               data-cerber-topline="supermarket"
+                                               >Супермаркет</a>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
+
+                                        <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
+                                            <a href="http://tv.rambler.ru/?utm_content=tv&utm_medium=topline&utm_source=rambler" class="b-rambler-topline-projects-item-dropdown__item"
+
+
+                                               data-tesla-goal="tv"
+                                               data-cerber-topline="tv"
+                                               >ТВ-программа</a>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
+
+                                        <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
+                                            <a href="http://top100.rambler.ru/?utm_content=top100&utm_medium=topline&utm_source=rambler" class="b-rambler-topline-projects-item-dropdown__item"
+
+
+                                               data-tesla-goal="top100"
+                                               data-cerber-topline="top100"
+                                               >Топ100</a>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="b-rambler-topline-projects-item-dropdown__hr"></div>
+                                <div class="b-rambler-topline-projects-item-dropdown__section">
+
+
+                                    <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
+
+                                        <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
+                                            <a href="http://rambler-co.ru/jobs" class="b-rambler-topline-projects-item-dropdown__item"
+
+
+                                               data-tesla-goal="job"
+                                               data-cerber-topline="job"
+                                               >Вакансии</a>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
+
+                                        <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
+                                            <a href="http://reklama.rambler.ru" class="b-rambler-topline-projects-item-dropdown__item"
+
+
+                                               data-tesla-goal="advertisement"
+                                               data-cerber-topline="advertisement"
+                                               >Реклама</a>
+                                        </div>
+
+                                    </div>
+
+                                </div><!--
+                                --><div class="b-rambler-topline-projects-item-dropdown__section">
+
+
+                                    <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
+
+                                        <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
+                                            <a href="http://help.rambler.ru/feedback/www/form/105/" class="b-rambler-topline-projects-item-dropdown__item"
+
+
+                                               data-tesla-goal="feedback"
+                                               data-cerber-topline="feedback"
+                                               >Обратная связь</a>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
+
+                                        <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
+                                            <a href="http://help.rambler.ru/" class="b-rambler-topline-projects-item-dropdown__item"
+
+
+                                               data-tesla-goal="help"
+                                               data-cerber-topline="help"
+                                               >Помощь</a>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="b-rambler-topline-projects-item-dropdown__hr"></div>
+                                <div class="b-rambler-topline-projects-item-dropdown__section b-rambler-topline-projects-item-dropdown__section_wide">
+
+
+                                    <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
+
+                                        <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
+                                            <a href="http://www.rambler.ru/all/" class="b-rambler-topline-projects-item-dropdown__item"
+
+
+                                               data-tesla-goal="all_projects"
+                                               data-cerber-topline="all_projects"
+                                               >Все продукты холдинга</a>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="b-rambler-topline__user b-rambler-topline-user"
+                         data-cerber-topline="user"
+                         >
+
+
+                        <div data-cerber-topline="guest">
+                            <a href="https://id.rambler.ru/profile/create?rname=head&utm_source=head&utm_medium=topline&utm_content=id"
+                               class="b-rambler-topline-user__menu-item js-backurl"
+                               data-cerber-topline="newmail"
+                               >Создать почту</a>
+                            <a href="//id.rambler.ru/login-20?rname=head"
+                               class="b-rambler-topline-user__menu-item b-rambler-topline-user__signin js-backurl"
+                               data-cerber-topline="login"
+                               >Войти</a>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="b-rambler-topline-search-wrap">
+            <div class="b-rambler-topline__inner">
+                <div class="b-rambler-topline-search"
+                     data-topline="search"
+                     >
+                    <div class="b-rambler-topline-search__item">
+
+                        <a href="http://www.rambler.ru/" class="b-rambler-topline-search__logo"
+                           data-tesla-goal="logo"
+                           data-cerber-topline="logo"
+                           >
+                            <img class="b-rambler-topline-search__logo-image"
+                                 src="data:image/svg+xml;base64,PCFET0NUWVBFIHN2ZyBQVUJMSUMgJy0vL1czQy8vRFREIFNWRyAxLjEvL0VOJyAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHhtbDpzcGFjZT0icHJlc2VydmUiIHZpZXdCb3g9IjAgMCA0MjQuMDAwMDEgMTA0Ij4KCTxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDExMzcuNzE0MywtNjAuMzYyMjA1KSIgZmlsbD0iIzMxMzEzMSI+CgkgICAgPHBhdGggZD0ibSAtMTEwMS43MTQzLDExNC4zNjIyIGMgMCwtMTAgLTQsLTE1Ljk5OTk5NSAtMTEsLTE1Ljk5OTk5NSAtNSwwIC05LDMuOTk5OTk1IC0xMCw0Ljk5OTk5NSBsIDAsMjQgYyAyLDIgNSw0IDksNCA4LDAgMTIsLTYgMTIsLTE3IG0gLTM2LC0yNi45OTk5OTUgMTUsMCAwLDYgYyAzLC00IDcsLTcgMTUsLTcgMTMsMCAyMiwxMCAyMiwyNy45OTk5OTUgMCwxNyAtMTAsMjkgLTI1LDI5IC02LDAgLTEwLC0zIC0xMiwtNCBsIDAsMjEgLTE1LDQgeiIgLz4KCSAgICA8cGF0aCBkPSJtIC0xMDQ3LjcxNDMsMTI3LjM2MjIgMCwtMTAgLTIsMCBjIC05LDAgLTE1LDMgLTE1LDkgMCw0IDMsNiA3LDYgNCwwIDcsLTIgMTAsLTUgbSAtMzEsMCBjIDAsLTE0IDE1LC0xOSAyOSwtMTkgbCAyLDAgMCwtMyBjIDAsLTUgLTMsLTcuOTk5OTk1IC05LC03Ljk5OTk5NSAtNiwwIC0xMSwyLjk5OTk5NSAtMTQsNS45OTk5OTUgbCAtNiwtOC45OTk5OTUgYyA0LC00IDExLC04IDIyLC04IDE0LDAgMjEsNSAyMSwxOS45OTk5OTUgbCAwLDE5IGMgMCw4IDEsMTMgMiwxNiBsIC0xNSwwIGMgMCwtMSAwLC00IDAsLTYgLTMsNCAtOSw4IC0xNiw4IC05LDAgLTE2LC02IC0xNiwtMTYgeiIgLz4KCSAgICA8cGF0aCBkPSJtIC0xMDE0LjcxNDMsODcuMzYyMjA1IDE0LDAgMTAuMDAwMDEsMzAuOTk5OTk1IGMgMiw0IDMsOSAzLDkgMCwwIDEsLTUgMywtOSBsIDEwLC0zMC45OTk5OTUgMTQsMCA4LDUzLjk5OTk5NSAtMTUsMCAtMywtMjQgYyAwLC00IC0xLC04IC0xLC04IDAsMCAtMSw0IC0yLDggbCAtOCwyNCAtMTQsMCAtNy4wMDAwMSwtMjQgYyAtMSwtNCAtMiwtOCAtMiwtOCBsIC0xLDAgYyAwLDAgMCw0IDAsOCBsIC00LDI0IC0xMywwIHoiIC8+CgkgICAgPHBhdGggZD0ibSAtOTA3LjcxNDI5LDExNS4zNjIyIGMgMCwtMTAgLTMsLTE2Ljk5OTk5NSAtMTEsLTE2Ljk5OTk5NSAtNiwwIC05LDIuOTk5OTk1IC0xMSw1Ljk5OTk5NSAwLDEgMCwzIDAsNCAwLDE3IDQsMjMgMTEsMjMgNywwIDExLC02IDExLC0xNiBtIC0zOCwtOSBjIDAsLTIyLjk5OTk5NSA4LC0zNy45OTk5OTUgMzAsLTQyLjk5OTk5NSBsIDE4LC0zIDIsMTIgLTE4LDMgYyAtMTAsMiAtMTYsNyAtMTcsMTggMywtMyA4LC02IDE1LC02IDEzLDAgMjQsMTAgMjQsMjYuOTk5OTk1IDAsMTggLTEyLDI5IC0yNywyOSAtMTksMCAtMjcsLTE3IC0yNywtMzcgeiIgLz4KCSAgICA8cGF0aCBkPSJtIC04ODguNzE0MjksMTMxLjM2MjIgYyA2LDAgOSwtNSAxMCwtMTcgbCAyLC0yNi45OTk5OTUgNDIsMCAwLDUzLjk5OTk5NSAtMTUsMCAwLC00MS45OTk5OTUgLTE0LDAgLTIsMTcuOTk5OTk1IGMgLTEsMTggLTksMjUgLTIxLDI1IHoiIC8+CgkgICAgPHBhdGggZD0ibSAtNzg5LjcxNDI5LDEwOC4zNjIyIGMgMCwtNyAtMiwtMTEuOTk5OTk1IC05LC0xMS45OTk5OTUgLTYsMCAtMTAsNC45OTk5OTUgLTExLDExLjk5OTk5NSB6IG0gLTM1LDYgYyAwLC0xNi45OTk5OTUgMTEsLTI3Ljk5OTk5NSAyNiwtMjcuOTk5OTk1IDE3LDAgMjUsMTIgMjQsMzEuOTk5OTk1IGwgLTM1LDAgYyAxLDggNSwxNCAxNCwxNCA4LDAgMTIsLTMgMTQsLTQgbCA1LDkgYyAtMywyIC05LDYgLTIwLDYgLTE4LDAgLTI4LC0xMiAtMjgsLTI5IHoiIC8+CgkgICAgPHBhdGggZD0ibSAtNzI4LjcxNDI5LDExNC4zNjIyIGMgMCwtMTAgLTQsLTE1Ljk5OTk5NSAtMTEsLTE1Ljk5OTk5NSAtNiwwIC05LDMuOTk5OTk1IC0xMCw0Ljk5OTk5NSBsIDAsMjQgYyAyLDIgNCw0IDksNCA4LDAgMTIsLTYgMTIsLTE3IG0gLTM2LC0yNi45OTk5OTUgMTQsMCAwLDYgYyAzLC00IDgsLTcgMTUsLTcgMTQsMCAyMiwxMCAyMiwyNy45OTk5OTUgMCwxNyAtMTAsMjkgLTI0LDI5IC02LDAgLTEwLC0zIC0xMiwtNCBsIDAsMjEgLTE1LDQgeiIgLz4KCTwvZz4KPC9zdmc+"
+                                 data-src="//topline.rambler.ru/static/bba0df0b21c465da0ba970ea7f218ccc3362419d/i/projects/head-dark.png"
+                                 alt="Рамблер"
+                                 >
+
+                        </a>
+
+                    </div>
+                    <div class="b-rambler-topline-search__input-wrap b-rambler-topline-search__item">
+                        <form class="b-rambler-topline-search__form" action="http://nova.rambler.ru/search" method="GET">
+                            <input type="hidden" name="topline" value="y" class="b-rambler-topline-search__param">
+                            <input type="hidden" name="utm_source" value="head" class="b-rambler-topline-search__param">
+                            <input type="hidden" name="utm_campaign" value="new_topline" class="b-rambler-topline-search__param">
+                            <input type="text" class="b-rambler-topline-search__input js-rambler-topline-search-text" name="query" autocomplete="off" maxlength="200" />
+                        </form>
+                    </div>
+                    <div class="b-rambler-topline-search__buttons b-rambler-topline-search__item">
+
+
+                        <div class="b-rambler-topline-search__button b-rambler-topline-search__button_web-search "
+                             data-cerber-topline="searchbtn"
+                             >Найти в Интернете</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-					</div>
-				
-					
-					<div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
-						
-    <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
-        <a href="http://horoscopes.rambler.ru/?utm_content=horoscopes&utm_medium=topline&utm_source=rambler" class="b-rambler-topline-projects-item-dropdown__item"
-            
-            
-            data-tesla-goal="horoscopes"
-            data-cerber-topline="horoscopes"
-        >Гороскопы</a>
-    </div>
 
-					</div>
-				
-					
-					<div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
-						
-    <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
-        <a href="http://money.rambler.ru/?utm_content=money&utm_medium=topline&utm_source=rambler" class="b-rambler-topline-projects-item-dropdown__item"
-            
-            
-            data-tesla-goal="money"
-            data-cerber-topline="money"
-        >Деньги</a>
-    </div>
+    <div class="b-rambler-topline-anchor"></div>
 
-					</div>
-				
-					
-					<div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
-						
-    <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
-        <a href="http://love.rambler.ru/?utm_content=love&utm_medium=topline&utm_source=rambler" class="b-rambler-topline-projects-item-dropdown__item"
-            
-            
-            data-tesla-goal="love"
-            data-cerber-topline="love"
-        >Знакомства</a>
-    </div>
-
-					</div>
-				
-					
-					<div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
-						
-    <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
-        <a href="http://kassa.rambler.ru/?utm_content=kassa&utm_medium=topline&utm_source=rambler" class="b-rambler-topline-projects-item-dropdown__item"
-            
-            
-            data-tesla-goal="kassa"
-            data-cerber-topline="kassa"
-        >Касса</a>
-    </div>
-
-					</div>
-				
-					
-					<div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
-						
-    <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
-        <a href="http://r0.ru/?topline=1&utm_content=r0&utm_medium=topline&utm_source=rambler" class="b-rambler-topline-projects-item-dropdown__item"
-            
-            
-            data-tesla-goal="search"
-            data-cerber-topline="search"
-        >Поиск</a>
-    </div>
-
-					</div>
-				
-					
-					<div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
-						
-    <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
-        <a href="http://weather.rambler.ru/?utm_content=weather&utm_medium=topline&utm_source=rambler" class="b-rambler-topline-projects-item-dropdown__item"
-            
-            
-            data-tesla-goal="weather"
-            data-cerber-topline="weather"
-        >Погода</a>
-    </div>
-
-					</div>
-				
-			</div><!--
-			--><div class="b-rambler-topline-projects-item-dropdown__section">
-				
-					
-					<div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
-						
-    <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
-        <a href="http://audio.rambler.ru/?utm_content=audio&utm_medium=topline&utm_source=rambler" class="b-rambler-topline-projects-item-dropdown__item"
-            
-            
-            data-tesla-goal="radio"
-            data-cerber-topline="radio"
-        >Радио</a>
-    </div>
-
-					</div>
-				
-					
-					<div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
-						
-    <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
-        <a href="http://family.rambler.ru/?utm_content=family&utm_medium=topline&utm_source=rambler" class="b-rambler-topline-projects-item-dropdown__item"
-            
-            
-            data-tesla-goal="r_family"
-            data-cerber-topline="r_family"
-        >Семья</a>
-    </div>
-
-					</div>
-				
-					
-					<div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
-						
-    <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
-        <a href="http://soft.rambler.ru/?utm_content=soft&utm_medium=topline&utm_source=rambler&rpid=r131s" class="b-rambler-topline-projects-item-dropdown__item"
-            
-            
-            data-tesla-goal="soft"
-            data-cerber-topline="soft"
-        >Софт</a>
-    </div>
-
-					</div>
-				
-					
-					<div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
-						
-    <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
-        <a href="http://weekend.rambler.ru/?utm_content=weekend&utm_medium=topline&utm_source=rambler" class="b-rambler-topline-projects-item-dropdown__item"
-            
-            
-            data-tesla-goal="weekend"
-            data-cerber-topline="weekend"
-        >Субботний Рамблер</a>
-    </div>
-
-					</div>
-				
-					
-					<div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
-						
-    <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
-        <a href="http://supermarket.rambler.ru/?utm_content=supermarket&utm_medium=topline&utm_source=rambler" class="b-rambler-topline-projects-item-dropdown__item"
-            
-            
-            data-tesla-goal="supermarket"
-            data-cerber-topline="supermarket"
-        >Супермаркет</a>
-    </div>
-
-					</div>
-				
-					
-					<div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
-						
-    <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
-        <a href="http://tv.rambler.ru/?utm_content=tv&utm_medium=topline&utm_source=rambler" class="b-rambler-topline-projects-item-dropdown__item"
-            
-            
-            data-tesla-goal="tv"
-            data-cerber-topline="tv"
-        >ТВ-программа</a>
-    </div>
-
-					</div>
-				
-					
-					<div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
-						
-    <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
-        <a href="http://top100.rambler.ru/?utm_content=top100&utm_medium=topline&utm_source=rambler" class="b-rambler-topline-projects-item-dropdown__item"
-            
-            
-            data-tesla-goal="top100"
-            data-cerber-topline="top100"
-        >Топ100</a>
-    </div>
-
-					</div>
-				
-			</div>
-			<div class="b-rambler-topline-projects-item-dropdown__hr"></div>
-			<div class="b-rambler-topline-projects-item-dropdown__section">
-				
-					
-					<div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
-						
-    <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
-        <a href="http://rambler-co.ru/jobs" class="b-rambler-topline-projects-item-dropdown__item"
-            
-            
-            data-tesla-goal="job"
-            data-cerber-topline="job"
-        >Вакансии</a>
-    </div>
-
-					</div>
-				
-					
-					<div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
-						
-    <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
-        <a href="http://reklama.rambler.ru" class="b-rambler-topline-projects-item-dropdown__item"
-            
-            
-            data-tesla-goal="advertisement"
-            data-cerber-topline="advertisement"
-        >Реклама</a>
-    </div>
-
-					</div>
-				
-			</div><!--
-			--><div class="b-rambler-topline-projects-item-dropdown__section">
-				
-					
-					<div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
-						
-    <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
-        <a href="http://help.rambler.ru/feedback/www/form/105/" class="b-rambler-topline-projects-item-dropdown__item"
-            
-            
-            data-tesla-goal="feedback"
-            data-cerber-topline="feedback"
-        >Обратная связь</a>
-    </div>
-
-					</div>
-				
-					
-					<div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
-						
-    <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
-        <a href="http://help.rambler.ru/" class="b-rambler-topline-projects-item-dropdown__item"
-            
-            
-            data-tesla-goal="help"
-            data-cerber-topline="help"
-        >Помощь</a>
-    </div>
-
-					</div>
-				
-			</div>
-			<div class="b-rambler-topline-projects-item-dropdown__hr"></div>
-			<div class="b-rambler-topline-projects-item-dropdown__section b-rambler-topline-projects-item-dropdown__section_wide">
-				
-					
-					<div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
-						
-    <div class="b-rambler-topline-projects-item-dropdown__item-wrapper">
-        <a href="http://www.rambler.ru/all/" class="b-rambler-topline-projects-item-dropdown__item"
-            
-            
-            data-tesla-goal="all_projects"
-            data-cerber-topline="all_projects"
-        >Все продукты холдинга</a>
-    </div>
-
-					</div>
-				
-			</div>
-		</div>
-	</div>
-				</div>
-				
-					<div class="b-rambler-topline__user b-rambler-topline-user"
-						data-cerber-topline="user"
-					>
-						
-            
-    <div data-cerber-topline="guest">
-        <a href="https://id.rambler.ru/profile/create?rname=head&utm_source=head&utm_medium=topline&utm_content=id"
-            class="b-rambler-topline-user__menu-item js-backurl"
-            data-cerber-topline="newmail"
-        >Создать почту</a>
-        <a href="//id.rambler.ru/login-20?rname=head"
-            class="b-rambler-topline-user__menu-item b-rambler-topline-user__signin js-backurl"
-            data-cerber-topline="login"
-        >Войти</a>
-    </div>
-
-        
-					</div>
-				
-			</div>
-		</div>
-	</div>
-	<div class="b-rambler-topline-search-wrap">
-		<div class="b-rambler-topline__inner">
-			<div class="b-rambler-topline-search"
-				data-topline="search"
-			>
-				<div class="b-rambler-topline-search__item">
-				
-					<a href="http://www.rambler.ru/" class="b-rambler-topline-search__logo"
-						data-tesla-goal="logo"
-						data-cerber-topline="logo"
-					>
-	                    <img class="b-rambler-topline-search__logo-image"
-							src="data:image/svg+xml;base64,PCFET0NUWVBFIHN2ZyBQVUJMSUMgJy0vL1czQy8vRFREIFNWRyAxLjEvL0VOJyAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHhtbDpzcGFjZT0icHJlc2VydmUiIHZpZXdCb3g9IjAgMCA0MjQuMDAwMDEgMTA0Ij4KCTxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDExMzcuNzE0MywtNjAuMzYyMjA1KSIgZmlsbD0iIzMxMzEzMSI+CgkgICAgPHBhdGggZD0ibSAtMTEwMS43MTQzLDExNC4zNjIyIGMgMCwtMTAgLTQsLTE1Ljk5OTk5NSAtMTEsLTE1Ljk5OTk5NSAtNSwwIC05LDMuOTk5OTk1IC0xMCw0Ljk5OTk5NSBsIDAsMjQgYyAyLDIgNSw0IDksNCA4LDAgMTIsLTYgMTIsLTE3IG0gLTM2LC0yNi45OTk5OTUgMTUsMCAwLDYgYyAzLC00IDcsLTcgMTUsLTcgMTMsMCAyMiwxMCAyMiwyNy45OTk5OTUgMCwxNyAtMTAsMjkgLTI1LDI5IC02LDAgLTEwLC0zIC0xMiwtNCBsIDAsMjEgLTE1LDQgeiIgLz4KCSAgICA8cGF0aCBkPSJtIC0xMDQ3LjcxNDMsMTI3LjM2MjIgMCwtMTAgLTIsMCBjIC05LDAgLTE1LDMgLTE1LDkgMCw0IDMsNiA3LDYgNCwwIDcsLTIgMTAsLTUgbSAtMzEsMCBjIDAsLTE0IDE1LC0xOSAyOSwtMTkgbCAyLDAgMCwtMyBjIDAsLTUgLTMsLTcuOTk5OTk1IC05LC03Ljk5OTk5NSAtNiwwIC0xMSwyLjk5OTk5NSAtMTQsNS45OTk5OTUgbCAtNiwtOC45OTk5OTUgYyA0LC00IDExLC04IDIyLC04IDE0LDAgMjEsNSAyMSwxOS45OTk5OTUgbCAwLDE5IGMgMCw4IDEsMTMgMiwxNiBsIC0xNSwwIGMgMCwtMSAwLC00IDAsLTYgLTMsNCAtOSw4IC0xNiw4IC05LDAgLTE2LC02IC0xNiwtMTYgeiIgLz4KCSAgICA8cGF0aCBkPSJtIC0xMDE0LjcxNDMsODcuMzYyMjA1IDE0LDAgMTAuMDAwMDEsMzAuOTk5OTk1IGMgMiw0IDMsOSAzLDkgMCwwIDEsLTUgMywtOSBsIDEwLC0zMC45OTk5OTUgMTQsMCA4LDUzLjk5OTk5NSAtMTUsMCAtMywtMjQgYyAwLC00IC0xLC04IC0xLC04IDAsMCAtMSw0IC0yLDggbCAtOCwyNCAtMTQsMCAtNy4wMDAwMSwtMjQgYyAtMSwtNCAtMiwtOCAtMiwtOCBsIC0xLDAgYyAwLDAgMCw0IDAsOCBsIC00LDI0IC0xMywwIHoiIC8+CgkgICAgPHBhdGggZD0ibSAtOTA3LjcxNDI5LDExNS4zNjIyIGMgMCwtMTAgLTMsLTE2Ljk5OTk5NSAtMTEsLTE2Ljk5OTk5NSAtNiwwIC05LDIuOTk5OTk1IC0xMSw1Ljk5OTk5NSAwLDEgMCwzIDAsNCAwLDE3IDQsMjMgMTEsMjMgNywwIDExLC02IDExLC0xNiBtIC0zOCwtOSBjIDAsLTIyLjk5OTk5NSA4LC0zNy45OTk5OTUgMzAsLTQyLjk5OTk5NSBsIDE4LC0zIDIsMTIgLTE4LDMgYyAtMTAsMiAtMTYsNyAtMTcsMTggMywtMyA4LC02IDE1LC02IDEzLDAgMjQsMTAgMjQsMjYuOTk5OTk1IDAsMTggLTEyLDI5IC0yNywyOSAtMTksMCAtMjcsLTE3IC0yNywtMzcgeiIgLz4KCSAgICA8cGF0aCBkPSJtIC04ODguNzE0MjksMTMxLjM2MjIgYyA2LDAgOSwtNSAxMCwtMTcgbCAyLC0yNi45OTk5OTUgNDIsMCAwLDUzLjk5OTk5NSAtMTUsMCAwLC00MS45OTk5OTUgLTE0LDAgLTIsMTcuOTk5OTk1IGMgLTEsMTggLTksMjUgLTIxLDI1IHoiIC8+CgkgICAgPHBhdGggZD0ibSAtNzg5LjcxNDI5LDEwOC4zNjIyIGMgMCwtNyAtMiwtMTEuOTk5OTk1IC05LC0xMS45OTk5OTUgLTYsMCAtMTAsNC45OTk5OTUgLTExLDExLjk5OTk5NSB6IG0gLTM1LDYgYyAwLC0xNi45OTk5OTUgMTEsLTI3Ljk5OTk5NSAyNiwtMjcuOTk5OTk1IDE3LDAgMjUsMTIgMjQsMzEuOTk5OTk1IGwgLTM1LDAgYyAxLDggNSwxNCAxNCwxNCA4LDAgMTIsLTMgMTQsLTQgbCA1LDkgYyAtMywyIC05LDYgLTIwLDYgLTE4LDAgLTI4LC0xMiAtMjgsLTI5IHoiIC8+CgkgICAgPHBhdGggZD0ibSAtNzI4LjcxNDI5LDExNC4zNjIyIGMgMCwtMTAgLTQsLTE1Ljk5OTk5NSAtMTEsLTE1Ljk5OTk5NSAtNiwwIC05LDMuOTk5OTk1IC0xMCw0Ljk5OTk5NSBsIDAsMjQgYyAyLDIgNCw0IDksNCA4LDAgMTIsLTYgMTIsLTE3IG0gLTM2LC0yNi45OTk5OTUgMTQsMCAwLDYgYyAzLC00IDgsLTcgMTUsLTcgMTQsMCAyMiwxMCAyMiwyNy45OTk5OTUgMCwxNyAtMTAsMjkgLTI0LDI5IC02LDAgLTEwLC0zIC0xMiwtNCBsIDAsMjEgLTE1LDQgeiIgLz4KCTwvZz4KPC9zdmc+"
-							data-src="//topline.rambler.ru/static/bba0df0b21c465da0ba970ea7f218ccc3362419d/i/projects/head-dark.png"
-							alt="Рамблер"
-						>
-						
-					</a>
-				
-				</div>
-				<div class="b-rambler-topline-search__input-wrap b-rambler-topline-search__item">
-					<form class="b-rambler-topline-search__form" action="http://nova.rambler.ru/search" method="GET">
-						<input type="hidden" name="topline" value="y" class="b-rambler-topline-search__param">
-						<input type="hidden" name="utm_source" value="head" class="b-rambler-topline-search__param">
-						<input type="hidden" name="utm_campaign" value="new_topline" class="b-rambler-topline-search__param">
-						<input type="text" class="b-rambler-topline-search__input js-rambler-topline-search-text" name="query" autocomplete="off" maxlength="200" />
-					</form>
-				</div>
-				<div class="b-rambler-topline-search__buttons b-rambler-topline-search__item">
-				
-				
-					<div class="b-rambler-topline-search__button b-rambler-topline-search__button_web-search "
-						data-cerber-topline="searchbtn"
-					>Найти в Интернете</div>
-				
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+    <script type="text/javascript">
+                window.ramblerToplineParams = {
+                isTouchSticky: false,
+                        staticUrlPrefix: '//topline.rambler.ru/static/bba0df0b21c465da0ba970ea7f218ccc3362419d/'
+                };</script>
+    <script src="//topline.rambler.ru/static/bba0df0b21c465da0ba970ea7f218ccc3362419d/dist/topline.min.js" type="text/javascript"></script><div class="b-header" style="background-image:url(http://h03.rl0.ru/3.21.25/i/weather/bg/cropped/winter_snow_wind.jpg)" data-img="http://h03.rl0.ru/3.21.25/i/weather/bg/cropped/winter_snow_wind.jpg"><div class="b-header__inner"><div class="b-informers b-informers_top"><div class="sizefix"><div class="b-informers__wrap"><div class="b-informers__item b-informers__item_geo"><a
+                                href="#" class="b-informers__link b-informers__city" target="_blank" data-cerber-head="head::main::informers.geo" data-value="Уфа"></a></div><div class="b-informers__item b-informers__item_weather"><a href="http://weather.rambler.ru/?utm_source=nhp&utm_content=weather&utm_medium=widget&utm_campaign=self_promo" target="_blank" class="b-informers__link" data-cerber-head="head::main::informers.weather" data-value="-1°"><i class="b-informers__icon icon-weather-snow"></i></a></div><div class="b-informers__item b-informers__item_usd"><a
+                                href="http://finance.rambler.ru/currencies/USD/?utm_source=nhp&utm_content=finance&utm_medium=widget&utm_campaign=self_promo&utm_term=usd" class="b-informers__link " target="_blank" data-cerber-head="head::main::informers.finance_USD" data-value="76,33"><i class="b-informers__icon icon-usd "></i></a></div><div class="b-informers__item b-informers__item_eur"><a
+                            href="http://finance.rambler.ru/currencies/EUR/?utm_source=nhp&utm_content=finance&utm_medium=widget&utm_campaign=self_promo&utm_term=eur" class="b-informers__link " target="_blank" data-cerber-head="head::main::informers.finance_EUR" data-value="82,81"><i class="b-informers__icon icon-eur "></i></a></div></div></div></div><div class="b-header__search"><div class="sizefix"><a href="/?utm_source=nhp&utm_content=rambler&utm_medium=logo&utm_campaign=self_promo" class="b-logo b-logo_bright" data-tesla-goal="logo" data-cerber-head="logo"><i class="b-logo__image"></i></a><div id="adfox-teaser-search" class="b-header__teaser js-teaser"></div><script>(new window.ramblerHead.adfoxLoader('teaser_search'))</script><form class="b-search" action="http://nova.rambler.ru/search" name="search" method="get"><input type="hidden" name="scroll" class="b-search_param_scroll" value="1" /><input type="hidden" name="utm_source" value="nhp" /><input type="hidden" name="utm_content" value="search" /><input type="hidden" name="utm_medium" value="button" /><input type="hidden" name="utm_campaign" value="self_promo" /><div class="b-search__wrap"><div class="b-search__text js-suggest"><input
+                                    type="text" name="query" class="b-search__input" id="search_query" autocomplete="off" maxlength="200"/><b class="b-search__button"><input type="submit" name="btnG" value="Найти" class="b-search__submit" data-tesla-goal="search" data-cerber-head="search"/></b></div><div class="b-search__example"><a href="http://nova.rambler.ru/search?scroll=1&amp;utm_source=nhp&amp;utm_campaign=yesad&amp;query_hint=Y&amp;weater_search=2&amp;query=курсы английского языка"><i></i><span>курсы английского языка</span></a></div></div></form></div></div><div class="b-informers b-informers_bottom"><div class="sizefix"><div class="b-informers__wrap"><div class="b-informers__item b-informers__item_mail"><a
+                                href="https://mail.rambler.ru/?utm_source=nhp&utm_content=mail&utm_medium=widget&utm_campaign=self_promo" class="b-informers__link" target="_blank" data-cerber-head="head::main::informers.mail"data-value="Почта"><i class="b-informers__icon icon-mail"></i></a></div><div class="b-informers__item b-informers__item_tv"><a
+                                href="http://tv.rambler.ru/?utm_source=nhp&utm_content=tv&utm_medium=widget&utm_campaign=self_promo" class="b-informers__link" target="_blank" data-yam-path="head::informer::tv::split" data-cerber-head="head::main::informers.tv" data-value="Программа ТВ"><i class="b-informers__icon icon-tv"></i></a></div><div class="b-informers__item b-informers__item_kassa"><a
+                            href="https://kassa.rambler.ru/movie/61747?utm_content=kassa&amp;utm_medium=brightsearch2&amp;utm_source=rambler" class="b-informers__link" target="_blank" data-yam-path="head::informer::kassa::split" data-cerber-head="head::main::informers.kassa" data-value="В кино: 5-я волна"><i class="b-informers__icon icon-kassa"></i></a></div></div></div></div></div></div><div class="b-categories" data-tesla-path="topics"><div class="sizefix"><a href="/moscow_city/" class="b-categories__item" data-tesla-goal="moscow_city" data-cerber-head="topics.moscow_city">В Москве</a> <a href="/politics/" class="b-categories__item" data-tesla-goal="politics" data-cerber-head="topics.politics">Политика</a> <a href="/sport/" class="b-categories__item" data-tesla-goal="sport" data-cerber-head="topics.sport">Спорт</a> <a href="/kinomusic/" class="b-categories__item" data-tesla-goal="kinomusic" data-cerber-head="topics.kinomusic">Кино и музыка</a> <a href="/auto/" class="b-categories__item" data-tesla-goal="auto" data-cerber-head="topics.auto">Авто</a> <a href="/scitech/" class="b-categories__item" data-tesla-goal="scitech" data-cerber-head="topics.scitech">Технологии</a> <a href="/games/" class="b-categories__item" data-tesla-goal="games" data-cerber-head="topics.games">Игры</a> <a href="/business/" class="b-categories__item" data-tesla-goal="business" data-cerber-head="topics.business">Бизнес</a> <a href="/lifestyle/" class="b-categories__item" data-tesla-goal="lifestyle" data-cerber-head="topics.lifestyle">Лайфстайл</a> <a href="/health/" class="b-categories__item" data-tesla-goal="health" data-cerber-head="topics.health">Здоровье</a> <a href="/kids/" class="b-categories__item" data-tesla-goal="kids" data-cerber-head="topics.kids">Дети</a> <a href="/starlife/" class="b-categories__item" data-tesla-goal="starlife" data-cerber-head="topics.starlife">Знаменитости</a> &#xA;<span class="b-categories__collector"><span class="b-categories__button" data-tesla-goal="more">Ещё<i class="b-categories__icon"></i></span><span class="b-categories__list"></span></span></div></div><div class="mixednews" data-tesla-path="mixednews"><div class="sizefix"><div class="mixednews__inner" itemscope itemtype="https://schema.org/WebPage"><div class="mixednews__aside"><div class="mixednews-aside-item mixednews-aside-item_banner-top mixednews-aside-item_rowspan-2"><i class="mixednews-aside-item__strut"></i><div id="adfox-240x400"></div></div><div class="mixednews-aside-item mixednews-aside-item_banner-alt"><div id="adfox-240x400-alter"></div></div><div class="mixednews-aside-item mixednews-aside-item_traffic-informer" data-split-id="0"><i class="mixednews-aside-item__strut"></i><div class="ya_traffic"><div class="ya_traffic__wrap"><div class="ya_traffic__title">Яндекс.Карты</div><div class="ya_traffic__description"><div class="ya_traffic__level"><a href="http://maps.yandex.ru/?ll=55.957829,54.734773&amp;z=12&amp;l=map,trf" target="_blank" data-cerber-head="head::main::informers.traffic"><span>Пробки </span><span class="ya_traffic__text-level">7</span><span class="ya_traffic__text-point"> баллов</span></a></div><div class="ya_traffic__traffic"><a  href="http://maps.yandex.ru/?ll=55.957829,54.734773&amp;z=12&amp;l=map,trf" target="_blank" data-cerber-head="head::main::informers.traffic" class="ya_traffic__icon ya_traffic__icon_red"><svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33"><path fill="#B4322D" d="M14.588 7.034c-.887.01-1.141.112-2.061.209-3.178.336-6.384 2.727-7.463 5.883s-.09 5.066 3.825 5.066c1.41-.831 1.435-8.614 5.402-10.269.557-.233 1.118-.429 1.672-.586.267-.076.69-.24.69-.24s-.971-.076-2.065-.063z"/><circle fill="#FF5858" cx="17.003" cy="17.073" r="9.976"/><path fill="#333" d="M17.032 7.074c-.87-.016-1.822-.07-3.347.085 4.065.167 7.811 2.414 9.322 7.124.464 1.551 2.469 3.463 3.924 3.581.027-.293.04-.59.04-.891 0-5.411-4.486-9.8-9.939-9.899z"/></svg></a><a href="http://maps.yandex.ru/?ll=55.957829,54.734773&amp;z=12&amp;l=map,trf" target="_blank" data-cerber-head="head::main::informers.traffic">Серьёзные пробки</a></div></div></div></div></div><script>(new window.ramblerHead.adfoxLoader('240x400'))</script></div><div class="mixednews__row mixednews__row_with-aside" itemprop="mainContentOfPage"><div class="mixednews_itemsline mixednews_itemsline_double-height"><a
+                            href="http://news.rambler.ru/business/32636842/"class="mixednews-item mixednews-item_main" data-cerber-head="head::main::news::1" data-tesla-goal="news.main"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img.rl0.ru/21aa64ed0c92ca8477f449d7c635bca3/c320x200/news.rambler.ru/img/2016/02/01161629.642571.8745.jpg" alt="Санкции РФ вызвали кризис в Турции" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">Санкции РФ вызвали кризис в Турции</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;<a
+                            href="http://news.rambler.ru/world/32637245/"class="mixednews-item mixednews-item_video" data-cerber-head="head::main::news::2" data-tesla-goal="news.2"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img03.rl0.ru/a552f5f8ac654cfd2188a3c4b3614fa3/c144x90/news.rambler.ru/img/2016/02/01164038.524516.9271.jpg" alt="США разжигают русско-турецкую войну" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /><span class="mixednews-item__video_icon"><span class="mixednews-item__video_icon__triangle"></span></span></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">США разжигают русско-турецкую войну</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;<a
+                            href="http://news.rambler.ru/politics/32636559/"class="mixednews-item" data-cerber-head="head::main::news::3" data-tesla-goal="news.3"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img02.rl0.ru/ea3bca0c904053346095a7d8d10ef4b6/c144x90/news.rambler.ru/img/2016/02/01161323.346105.4198.png" alt="В Минобороны прокомментировали обвинения Стамбула" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">В Минобороны прокомментировали обвинения Стамбула</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;<a
+                            href="http://news.rambler.ru/economics/32628262/"class="mixednews-item" data-cerber-head="head::main::news::4" data-tesla-goal="news.4"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img01.rl0.ru/a3aadbc36ee59d1a360e714609e7150a/c144x90/news.rambler.ru/img/2016/02/01163847.328723.8275.jpg" alt="Россияне соскакивают с кредитной иглы" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">Россияне соскакивают с кредитной иглы</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;<a
+                            href="http://news.rambler.ru/politics/32635391/"class="mixednews-item mixednews-item_video" data-cerber-head="head::main::news::5" data-tesla-goal="news.5"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img.rl0.ru/0044f96f34d685cf37fa842c73a37bd6/c144x90/news.rambler.ru/img/2016/02/01150647.784885.6289.jpg" alt="Турции пообещали ответ на обвинения в нарушении границы" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /><span class="mixednews-item__video_icon"><span class="mixednews-item__video_icon__triangle"></span></span></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">Турции пообещали ответ на обвинения в нарушении границы</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;<a
+                            href="http://news.rambler.ru/economics/32636662/"class="mixednews-item mixednews-item_hidden" data-cerber-head="head::main::news::6" data-tesla-goal="news.6"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img02.rl0.ru/dd396cdfe0f722409236aed62944ab60/c144x90/news.rambler.ru/img/2016/02/01160536.861090.8570.jpg" alt="Аналитик рассказал о последствиях падения цен на нефть" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">Аналитик рассказал о последствиях падения цен на нефть</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;<a
+                            href="http://news.rambler.ru/business/32634511/"class="mixednews-item mixednews-item_hidden" data-cerber-head="head::main::news::7" data-tesla-goal="news.7"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img02.rl0.ru/440e3df0b5bfa99b10f6027495327c91/c144x90/news.rambler.ru/img/2016/02/01161119.952785.8798.jpg" alt="Число безработных в РФ превысило 1 млн человек" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">Число безработных в РФ превысило 1 млн человек</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;</div><div class="mixednews_itemsline"><a
+                            href="http://video.rambler.ru/programma/novosti-segodnya/politika-2/stroitelnym-kompaniyam-nuzhno-pomoch-prodavat/?utm_campaign=self_promo&amp;utm_term=head&amp;utm_medium=news&amp;utm_source=rambler&amp;utm_content=video"target="_blank"class="mixednews-item mixednews-item_partner" data-cerber-head="head::cross-news::video::main::%D0%A1%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%BC%20%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D1%8F%D0%BC%20%D0%BD%D1%83%D0%B6%D0%BD%D0%BE%20%D0%BF%D0%BE%D0%BC%D0%BE%D1%87%D1%8C%20%D0%BF%D1%80%D0%BE%D0%B4%D0%B0%D0%B2%D0%B0%D1%82%D1%8C::%D1%80%D0%B0%D0%BC%D0%B1%D0%BB%D0%B5%D1%80.%D0%B2%D0%B8%D0%B4%D0%B5%D0%BE" data-tesla-goal="news.partner.8"data-yandex-metrika="main_promo8"><div class="mixednews-item__image_wrap"><img src="http://img.rl0.ru/pgc/c144x90/56af5851-63f2-e663-63f2-e62a0e9fb2ba.photo.0.jpg" alt="Строительным компаниям нужно помочь продавать" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">Строительным компаниям нужно помочь продавать</span> &#xA;</span></span><span class="mixednews-item__source">рамблер.видео</span></a> &#xA;<a
+                            href="http://news.rambler.ru/starlife/32625013/"class="mixednews-item" data-cerber-head="head::main::news::9" data-tesla-goal="news.9"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img02.rl0.ru/pgc/c144x90/56af3620-f42c-4c86-f42c-4c8998942af7.photo.0.jpg" alt="Отец Фриске назвал причину рака дочери" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">Отец Фриске назвал причину рака дочери</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;<div class="adfox-banner-promo adfox-banner-promo-10" id="adfox-banner-promo-10"></div><a
+                            href="http://finance.rambler.ru/news/2016-2-1/rossiiu-vycherknuli-iz-briks/?utm_campaign=self_promo&amp;utm_term=head&amp;utm_medium=news&amp;utm_source=rambler&amp;utm_content=finance"target="_blank"class="mixednews-item mixednews-item_partner mixednews-item_banner mixednews-item_banner-10" data-cerber-head="head::cross-news::finance::main::%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D1%8E%20%D0%B2%D1%8B%D1%87%D0%B5%D1%80%D0%BA%D0%BD%D1%83%D0%BB%D0%B8%20%D0%B8%D0%B7%20%D0%91%D0%A0%D0%98%D0%9A%D0%A1::%D0%A4%D0%B8%D0%BD%D0%B0%D0%BD%D1%81%D1%8B" data-tesla-goal="news.promo.10"data-yandex-metrika="main_promo10"><div class="mixednews-item__image_wrap"><img src="http://img.rl0.ru/pgc/c144x90/56af43a7-5048-e54f-5048-e50844697341.photo.0.jpg" alt="Россию вычеркнули из БРИКС" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">Россию вычеркнули из БРИКС</span> &#xA;</span></span><span class="mixednews-item__source">Финансы</span></a> &#xA;<a
+                            href="http://news.rambler.ru/politics/32634556/"class="mixednews-item mixednews-item_hidden" data-cerber-head="head::main::news::11" data-tesla-goal="news.11"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img03.rl0.ru/86a52051c7e005597f053ed22d1b8302/c144x90/news.rambler.ru/img/2016/02/01151057.472747.4630.jpg" alt="«Азов» и «Минск» пересекли Босфор" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">«Азов» и «Минск» пересекли Босфор</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;<div class="adfox-banner-promo adfox-banner-promo-12" id="adfox-banner-promo-12"></div><a
+                            href="http://family.rambler.ru/news/nauka-i-tehnika/344368/?utm_campaign=self_promo&amp;utm_term=head&amp;utm_medium=news&amp;utm_source=rambler&amp;utm_content=family"target="_blank"class="mixednews-item mixednews-item_partner mixednews-item_banner mixednews-item_banner-12" data-cerber-head="head::cross-news::family::main::%D0%A3%D1%87%D0%B5%D0%BD%D1%8B%D0%B5%20%D1%80%D0%B0%D1%81%D1%81%D0%BA%D0%B0%D0%B7%D0%B0%D0%BB%D0%B8%2C%20%D0%BA%D0%B0%D0%BA%20%D0%BB%D1%8E%D0%B4%D0%B8%20%D0%B2%D1%8B%D0%B1%D0%B8%D1%80%D0%B0%D1%8E%D1%82%20%D1%81%D0%B5%D0%B1%D0%B5%20%D0%BF%D0%B0%D1%80%D1%83::%D0%A1%D0%B5%D0%BC%D1%8C%D1%8F" data-tesla-goal="news.promo.12"data-yandex-metrika="main_promo12"><div class="mixednews-item__image_wrap"><img src="http://img.rl0.ru/pgc/c144x90/56af166b-a61d-d94e-a61d-d909b92673f8.photo.0.jpg" alt="Ученые рассказали, как люди выбирают себе пару" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">Ученые рассказали, как люди выбирают себе пару</span> &#xA;</span></span><span class="mixednews-item__source">Семья</span></a> &#xA;</div><div class="mixednews_itemsline"><a
+                            href="http://news.rambler.ru/politics/32635811/"class="mixednews-item mixednews-item_video" data-cerber-head="head::main::news::13" data-tesla-goal="news.13"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img04.rl0.ru/2a74fa9a239c718fbd2730e7889c4697/c144x90/news.rambler.ru/img/2016/02/01151427.391133.9110.jpg" alt="СМИ объяснили причину «демонизации» Путина на Западе" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /><span class="mixednews-item__video_icon"><span class="mixednews-item__video_icon__triangle"></span></span></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">СМИ объяснили причину «демонизации» Путина на Западе</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;<a
+                            href="http://news.rambler.ru/economics/32633261/"class="mixednews-item" data-cerber-head="head::main::news::14" data-tesla-goal="news.14"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img03.rl0.ru/3f1089ea90b28106310e70b6ba8cc074/c144x90/news.rambler.ru/img/2016/02/01134901.192318.91.jpg" alt="Цена российской нефти рухнула на 40%" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">Цена российской нефти рухнула на 40%</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;<a
+                            href="http://news.rambler.ru/science/32635178/"class="mixednews-item" data-cerber-head="head::main::news::15" data-tesla-goal="news.15"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img02.rl0.ru/1ed37af7a9b7c5627be47a3afa7feb57/c144x90/news.rambler.ru/img/2016/02/01143641.749217.9449.jpg" alt="Биологи рассказали о возникновении ведущих к раку мутаций" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">Биологи рассказали о возникновении ведущих к раку мутаций</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;<a
+                            href="http://news.rambler.ru/politics/32634496/"class="mixednews-item mixednews-item_video" data-cerber-head="head::main::news::16" data-tesla-goal="news.16"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img.rl0.ru/743c13faf8f61fba541d589056de9908/c144x90/news.rambler.ru/img/2016/02/01135647.170915.6129.jpg" alt="Россия начинает испытания С-500" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /><span class="mixednews-item__video_icon"><span class="mixednews-item__video_icon__triangle"></span></span></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">Россия начинает испытания С-500</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;<a
+                        href="http://news.rambler.ru/world/32634219/"class="mixednews-item mixednews-item_hidden mixednews-item_video" data-cerber-head="head::main::news::17" data-tesla-goal="news.17"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img04.rl0.ru/3b6372184b6cabe0ebc02d00d4b0e858/c144x90/news.rambler.ru/img/2016/02/01133833.055443.6735.jpg" alt="Сообщившая об изнасиловании русская девочка помещена в психиатрическую клинику" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /><span class="mixednews-item__video_icon"><span class="mixednews-item__video_icon__triangle"></span></span></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">Сообщившая об изнасиловании русская девочка помещена в психиатрическую клинику</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;</div></div><div class="mixednews__row"><div class="mixednews__bottom-ad"><div id="adfox-direct-horizontal"></div><script>(new window.ramblerHead.adfoxLoader('direct_horizontal'))</script></div><a
+                        href="http://news.rambler.ru/head/32633825/"class="mixednews-item" data-cerber-head="head::main::news::18" data-tesla-goal="news.18"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img.rl0.ru/9cbb425e6f11847ae66d14a5350bf462/c320x200/news.rambler.ru/img/2016/02/01131337.568857.8949.jpg" alt="«Мы вас туда не посылали»" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">«Мы вас туда не посылали»</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;<a
+                        href="http://news.rambler.ru/articles/32631833/"class="mixednews-item" data-cerber-head="head::main::news::19" data-tesla-goal="news.19"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img04.rl0.ru/f84e6ae262ffc74cd1cddb3e0740efd5/c144x90/news.rambler.ru/img/2016/02/01113058.627189.2164.jpg" alt="Закат Чубайса" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">Закат Чубайса</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;<a
+                        href="http://news.rambler.ru/head/32636142/"class="mixednews-item" data-cerber-head="head::main::news::20" data-tesla-goal="news.20"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img03.rl0.ru/22d0d972e46891182c00a5dfab17429d/c144x90/news.rambler.ru/img/2016/02/01152910.756197.9613.jpg" alt="Смерть кулинара" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">Смерть кулинара</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;<a
+                        href="http://news.rambler.ru/head/32636345/"class="mixednews-item" data-cerber-head="head::main::news::21" data-tesla-goal="news.21"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img02.rl0.ru/7ee602fb544189f354cf14feb21be3fc/c144x90/news.rambler.ru/img/2016/02/01154712.360215.6098.jpg" alt="Что ждет рубль, доллар и евро в феврале" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">Что ждет рубль, доллар и евро в феврале</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;<a
+                        href="http://news.rambler.ru/head/32630162/"class="mixednews-item" data-cerber-head="head::main::news::22" data-tesla-goal="news.22"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img03.rl0.ru/50fdb37575315025216acf5a8932875d/c144x90/news.rambler.ru/img/2016/02/01100341.296468.5367.jpg" alt="На пороге русско-турецкой войны" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">На пороге русско-турецкой войны</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;<a
+                        href="http://news.rambler.ru/articles/32627913/"class="mixednews-item" data-cerber-head="head::main::news::23" data-tesla-goal="news.23"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img03.rl0.ru/570284338a3d4f345cd922eca6c355c4/c144x90/news.rambler.ru/img/2016/02/01163440.848732.528.jpg" alt="Подлинные мотивы республиканцев" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">Подлинные мотивы республиканцев</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;<a
+                        href="http://news.rambler.ru/articles/32633612/"class="mixednews-item mixednews-item_hidden" data-cerber-head="head::main::news::24" data-tesla-goal="news.24"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img04.rl0.ru/9f790403492e6ebdbbc53c0ad901f43f/c144x90/news.rambler.ru/img/2016/02/01162229.539829.4807.jpg" alt="Аршавин близок к концу" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">Аршавин близок к концу</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;<a
+                        href="http://news.rambler.ru/head/32629710/"class="mixednews-item" data-cerber-head="head::main::news::25" data-tesla-goal="news.25"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img02.rl0.ru/e33ecfd7c668ae7d98dc1863e310c032/c144x90/news.rambler.ru/img/2016/02/01092516.168934.9000.jpg" alt="Прожить на 5000 рублей в месяц" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">Прожить на 5000 рублей в месяц</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;<a
+                        href="http://news.rambler.ru/head/32635640/"class="mixednews-item" data-cerber-head="head::main::news::26" data-tesla-goal="news.26"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img02.rl0.ru/df24610eba34440b46f93483267b1367/c144x90/news.rambler.ru/img/2016/02/01150334.997635.8838.jpg" alt="5 доказательств того, что футболом правят деньги" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">5 доказательств того, что футболом правят деньги</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;<a
+                        href="http://news.rambler.ru/head/32634537/"class="mixednews-item" data-cerber-head="head::main::news::27" data-tesla-goal="news.27"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img01.rl0.ru/097f756ea3a95b40c661674f5e7358c0/c144x90/news.rambler.ru/img/2016/02/01140029.091765.7527.jpg" alt="Швейцарцы против денег" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">Швейцарцы против денег</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;<a
+                        href="http://news.rambler.ru/head/32636560/"class="mixednews-item" data-cerber-head="head::main::news::28" data-tesla-goal="news.28"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img04.rl0.ru/9ba241980eb18f598163e8c1320ac17e/c144x90/news.rambler.ru/img/2016/02/01160109.848110.6201.jpg" alt="Процент непопулярности" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">Процент непопулярности</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;<a
+                        href="http://news.rambler.ru/articles/32627946/"class="mixednews-item" data-cerber-head="head::main::news::29" data-tesla-goal="news.29"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img.rl0.ru/9a0fd975900a017730faa6d33a28ff82/c144x90/news.rambler.ru/img/2016/02/01151329.732210.2516.jpg" alt="В России не ждут скорого мира в Украине" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">В России не ждут скорого мира в Украине</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;<a
+                        href="http://news.rambler.ru/head/32635352/"class="mixednews-item" data-cerber-head="head::main::news::30" data-tesla-goal="news.30"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img04.rl0.ru/6f00087c0319151d83667719d0296065/c144x90/news.rambler.ru/img/2016/02/01144251.581990.1442.jpg" alt="Царь Борис" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">Царь Борис</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;<a
+                    href="http://news.rambler.ru/head/32634778/"class="mixednews-item mixednews-item_hidden" data-cerber-head="head::main::news::31" data-tesla-goal="news.31"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img.rl0.ru/fe86e3c658c96d1957406c661f295894/c144x90/news.rambler.ru/img/2016/02/01141516.086628.6329.jpg" alt="Пираты спускают флаг" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">Пираты спускают флаг</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;</div></div></div></div><script>
+                                (new window.ramblerHead.adfoxLoader('news_promo_10'));
+                                (new window.ramblerHead.adfoxLoader('news_promo_12'));</script><div class="b-gap" target="_blank" data-tesla-path="projects"><div class="b-gap__inner"><div class="sizefix"><span class="b-gap__item b-gap__item_label">Другие проекты:</span><!--<a href="http://games.kanobu.ru" target="_blank" class="gap__item" data-tesla-goal="kanobu" data-cerber-head="head::main::projects.kanobu">Игры</a>--><a href="http://weekend.rambler.ru/?utm_source=rambler&amp;utm_content=weekend&amp;utm_medium=topline2&amp;utm_campaign=self_promo" target="_blank" class="b-gap__item" data-tesla-goal="weekend" data-cerber-head="head::main::projects.weekend">Субботний Рамблер</a> &#xA;<a href="http://soft.rambler.ru/?utm_source=rambler&amp;utm_content=browser&amp;utm_medium=topline2&amp;utm_campaign=self_promo" target="_blank" class="b-gap__item" data-tesla-goal="soft" data-cerber-head="head::main::projects.soft">Браузер</a> &#xA;<a href="http://kassa.rambler.ru/?utm_source=rambler&amp;utm_content=kassa&amp;utm_medium=topline2&amp;utm_campaign=self_promo" target="_blank" class="b-gap__item" data-tesla-goal="kassa" data-cerber-head="head::main::projects.kassa">Касса</a> &#xA;<a href="http://horoscopes.rambler.ru/?utm_source=rambler&amp;utm_content=horoscopes&amp;utm_medium=topline2&amp;utm_campaign=self_promo" target="_blank" class="b-gap__item" data-tesla-goal="horoscopes" data-cerber-head="head::main::projects.horoscopes">Гороскопы</a> &#xA;<a href="http://audio.rambler.ru/?utm_source=rambler&amp;utm_content=audio&amp;utm_medium=topline2&amp;utm_campaign=self_promo" target="_blank" class="b-gap__item" data-tesla-goal="audio" data-cerber-head="head::main::projects.audio">Радио</a> &#xA;<a href="http://weather.rambler.ru/?utm_source=rambler&amp;utm_content=weather&amp;utm_medium=topline2&amp;utm_campaign=self_promo" target="_blank" class="b-gap__item" data-tesla-goal="weather" data-cerber-head="head::main::projects.weather">Погода</a> &#xA;<a href="http://tv.rambler.ru/?utm_source=rambler&amp;utm_content=tv&amp;utm_medium=topline2&amp;utm_campaign=self_promo" target="_blank" class="b-gap__item" data-tesla-goal="tv" data-cerber-head="head::main::projects.tv">Телепрограмма</a> &#xA;<a href="http://top100.rambler.ru/?utm_source=rambler&amp;utm_content=top100&amp;utm_medium=topline2&amp;utm_campaign=self_promo" target="_blank" class="b-gap__item b-gap__item_top100" data-tesla-goal="top100" data-cerber-head="head::main::projects.top100">Каталог Топ 100</a></div></div></div><div id="adfox-superfooter" class="sizefix"></div><script>(new window.ramblerHead.adfoxLoader('superfooter'))</script><div class="b-guides" id="recommendations" data-tesla-path="recommendations" data-more="/block/recommendations/?topic=&amp;gender=&amp;astrological_sign=&amp;geoid=54119156"><b class="b-guides__more">Ещё рекомендации</b><div class="b-guides__error-message">Не получилось загрузить рекомендации</div><i class="spinner"></i></div><div class="r__footer" data-tesla-path="footer"><div class="r__footer__sizefix"><i class="b-ageicon"> 18+ </i><span class="r__footer__firstline"><span class="r__footer__item r__footer__mobile">Мобильная версия <a class="r__footer__mobile-link" href="http://www.rambler.ru/rm-fv/" data-tesla-goal="pda">m.rambler.ru</a></span> &#xA;<a class="r__footer__item r__footer__advert" href="http://reklama.rambler.ru" target="_blank" data-tesla-goal="advert">Размещение рекламы</a> &#xA;<a class="r__footer__item" href="http://rambler-co.ru/jobs" data-tesla-goal="jobs">Вакансии</a> &#xA;<a class="r__footer__item r__footer__item_backtoold" href="http://www.rambler.ru/set_karma?v=old" rel="nofollow" data-tesla-goal="back_to_old">Вернуться в старый дизайн</a><span class="r__footer__item"><span>Flickr</span>, <a href="http://www.flickr.com/photos/vegas/381904734/sizes/o/" rel="nofollow">Marcus Vegas &copy</a></span></span> &#xA;<span class="r__footer__secondline"><a class="r__footer__item r__footer__item_help" href="http://help.rambler.ru/" data-tesla-goal="help" target="_blank">Помощь</a> &#xA;<a class="r__footer__item r__footer__item_help" href="http://help.rambler.ru/feedback/www/form/105/" data-tesla-goal="feedback" target="_blank">Обратная связь</a> &#xA;<a class="r__footer__item r__footer__item_help" href="http://help.rambler.ru/legal/www/" data-tesla-goal="legal" target="_blank">Правила пользования и конфиденциальность</a> &#xA;<span class="r__footer__item r__footer__copyright">&copy; <a href="http://rambler-co.ru/" class="r__footer__copyright-link b_about" target="_blank" data-tesla-goal="rambler">Рамблер</a>, <em style="font-style:normal;" class="r__footer__copyright-date">2016</em></span></span></div></div><div id="counters" class="g-counter-hidden"><!-- Hydra (Cerber) Counter --><script src="//cntcerber.rambler.ru/counter.js"></script><script type="text/javascript">
+                                            window.cerberCounter = new CerberCounter({
+                                            project: 'rambler.head',
+                                                    attributes_dataset: [
+                                                            'cerber-topline',
+                                                            'cerber-head'
+                                                    ],
+                                                    splits: [
+                                                            'personal_recom'
+                                                    ]
+                                            });</script><noscript><img src="//cntcerber.rambler.ru/noscript/rambler.head/?.v.js=off&.ev=.pv&.sp.personal_recom=1" /></noscript><!-- END Hydra (Cerber) Counter --><div id="adfox-hidden"></div><script>(new window.ramblerHead.adfoxLoader('adfox_hidden'))</script><script>
+                                                        window.fbAsyncInit = function() {
+                                                        FB.init({
+                                                        appId      : '306247456251148',
+                                                                xfbml      : true,
+                                                                version    : 'v2.2'
+                                                        });
+                                                        };
+                                                        (function(d, s, id){var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) {return; }js = d.createElement(s); js.id = id; js.src = "//connect.facebook.net/ru_RU/sdk.js"; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));</script><script type="text/javascript">
 
 
-<div class="b-rambler-topline-anchor"></div>
-
-<script type="text/javascript">
-    window.ramblerToplineParams = {
-        isTouchSticky: false,
-        staticUrlPrefix: '//topline.rambler.ru/static/bba0df0b21c465da0ba970ea7f218ccc3362419d/'
-    };
-</script>
-<script src="//topline.rambler.ru/static/bba0df0b21c465da0ba970ea7f218ccc3362419d/dist/topline.min.js" type="text/javascript"></script><div class="b-header" style="background-image:url(http://h03.rl0.ru/3.21.25/i/weather/bg/cropped/winter_snow_wind.jpg)" data-img="http://h03.rl0.ru/3.21.25/i/weather/bg/cropped/winter_snow_wind.jpg"><div class="b-header__inner"><div class="b-informers b-informers_top"><div class="sizefix"><div class="b-informers__wrap"><div class="b-informers__item b-informers__item_geo"><a
-        href="#" class="b-informers__link b-informers__city" target="_blank" data-cerber-head="head::main::informers.geo" data-value="Уфа"></a></div><div class="b-informers__item b-informers__item_weather"><a href="http://weather.rambler.ru/?utm_source=nhp&utm_content=weather&utm_medium=widget&utm_campaign=self_promo" target="_blank" class="b-informers__link" data-cerber-head="head::main::informers.weather" data-value="-1°"><i class="b-informers__icon icon-weather-snow"></i></a></div><div class="b-informers__item b-informers__item_usd"><a
-            href="http://finance.rambler.ru/currencies/USD/?utm_source=nhp&utm_content=finance&utm_medium=widget&utm_campaign=self_promo&utm_term=usd" class="b-informers__link " target="_blank" data-cerber-head="head::main::informers.finance_USD" data-value="76,33"><i class="b-informers__icon icon-usd "></i></a></div><div class="b-informers__item b-informers__item_eur"><a
-            href="http://finance.rambler.ru/currencies/EUR/?utm_source=nhp&utm_content=finance&utm_medium=widget&utm_campaign=self_promo&utm_term=eur" class="b-informers__link " target="_blank" data-cerber-head="head::main::informers.finance_EUR" data-value="82,81"><i class="b-informers__icon icon-eur "></i></a></div></div></div></div><div class="b-header__search"><div class="sizefix"><a href="/?utm_source=nhp&utm_content=rambler&utm_medium=logo&utm_campaign=self_promo" class="b-logo b-logo_bright" data-tesla-goal="logo" data-cerber-head="logo"><i class="b-logo__image"></i></a><div id="adfox-teaser-search" class="b-header__teaser js-teaser"></div><script>(new window.ramblerHead.adfoxLoader('teaser_search'))</script><form class="b-search" action="http://nova.rambler.ru/search" name="search" method="get"><input type="hidden" name="scroll" class="b-search_param_scroll" value="1" /><input type="hidden" name="utm_source" value="nhp" /><input type="hidden" name="utm_content" value="search" /><input type="hidden" name="utm_medium" value="button" /><input type="hidden" name="utm_campaign" value="self_promo" /><div class="b-search__wrap"><div class="b-search__text js-suggest"><input
-                                type="text" name="query" class="b-search__input" id="search_query" autocomplete="off" maxlength="200"/><b class="b-search__button"><input type="submit" name="btnG" value="Найти" class="b-search__submit" data-tesla-goal="search" data-cerber-head="search"/></b></div><div class="b-search__example"><a href="http://nova.rambler.ru/search?scroll=1&amp;utm_source=nhp&amp;utm_campaign=yesad&amp;query_hint=Y&amp;weater_search=2&amp;query=курсы английского языка"><i></i><span>курсы английского языка</span></a></div></div></form></div></div><div class="b-informers b-informers_bottom"><div class="sizefix"><div class="b-informers__wrap"><div class="b-informers__item b-informers__item_mail"><a
-        href="https://mail.rambler.ru/?utm_source=nhp&utm_content=mail&utm_medium=widget&utm_campaign=self_promo" class="b-informers__link" target="_blank" data-cerber-head="head::main::informers.mail"data-value="Почта"><i class="b-informers__icon icon-mail"></i></a></div><div class="b-informers__item b-informers__item_tv"><a
-        href="http://tv.rambler.ru/?utm_source=nhp&utm_content=tv&utm_medium=widget&utm_campaign=self_promo" class="b-informers__link" target="_blank" data-yam-path="head::informer::tv::split" data-cerber-head="head::main::informers.tv" data-value="Программа ТВ"><i class="b-informers__icon icon-tv"></i></a></div><div class="b-informers__item b-informers__item_kassa"><a
-        href="https://kassa.rambler.ru/movie/61747?utm_content=kassa&amp;utm_medium=brightsearch2&amp;utm_source=rambler" class="b-informers__link" target="_blank" data-yam-path="head::informer::kassa::split" data-cerber-head="head::main::informers.kassa" data-value="В кино: 5-я волна"><i class="b-informers__icon icon-kassa"></i></a></div></div></div></div></div></div><div class="b-categories" data-tesla-path="topics"><div class="sizefix"><a href="/moscow_city/" class="b-categories__item" data-tesla-goal="moscow_city" data-cerber-head="topics.moscow_city">В Москве</a> <a href="/politics/" class="b-categories__item" data-tesla-goal="politics" data-cerber-head="topics.politics">Политика</a> <a href="/sport/" class="b-categories__item" data-tesla-goal="sport" data-cerber-head="topics.sport">Спорт</a> <a href="/kinomusic/" class="b-categories__item" data-tesla-goal="kinomusic" data-cerber-head="topics.kinomusic">Кино и музыка</a> <a href="/auto/" class="b-categories__item" data-tesla-goal="auto" data-cerber-head="topics.auto">Авто</a> <a href="/scitech/" class="b-categories__item" data-tesla-goal="scitech" data-cerber-head="topics.scitech">Технологии</a> <a href="/games/" class="b-categories__item" data-tesla-goal="games" data-cerber-head="topics.games">Игры</a> <a href="/business/" class="b-categories__item" data-tesla-goal="business" data-cerber-head="topics.business">Бизнес</a> <a href="/lifestyle/" class="b-categories__item" data-tesla-goal="lifestyle" data-cerber-head="topics.lifestyle">Лайфстайл</a> <a href="/health/" class="b-categories__item" data-tesla-goal="health" data-cerber-head="topics.health">Здоровье</a> <a href="/kids/" class="b-categories__item" data-tesla-goal="kids" data-cerber-head="topics.kids">Дети</a> <a href="/starlife/" class="b-categories__item" data-tesla-goal="starlife" data-cerber-head="topics.starlife">Знаменитости</a> &#xA;<span class="b-categories__collector"><span class="b-categories__button" data-tesla-goal="more">Ещё<i class="b-categories__icon"></i></span><span class="b-categories__list"></span></span></div></div><div class="mixednews" data-tesla-path="mixednews"><div class="sizefix"><div class="mixednews__inner" itemscope itemtype="https://schema.org/WebPage"><div class="mixednews__aside"><div class="mixednews-aside-item mixednews-aside-item_banner-top mixednews-aside-item_rowspan-2"><i class="mixednews-aside-item__strut"></i><div id="adfox-240x400"></div></div><div class="mixednews-aside-item mixednews-aside-item_banner-alt"><div id="adfox-240x400-alter"></div></div><div class="mixednews-aside-item mixednews-aside-item_traffic-informer" data-split-id="0"><i class="mixednews-aside-item__strut"></i><div class="ya_traffic"><div class="ya_traffic__wrap"><div class="ya_traffic__title">Яндекс.Карты</div><div class="ya_traffic__description"><div class="ya_traffic__level"><a href="http://maps.yandex.ru/?ll=55.957829,54.734773&amp;z=12&amp;l=map,trf" target="_blank" data-cerber-head="head::main::informers.traffic"><span>Пробки </span><span class="ya_traffic__text-level">7</span><span class="ya_traffic__text-point"> баллов</span></a></div><div class="ya_traffic__traffic"><a  href="http://maps.yandex.ru/?ll=55.957829,54.734773&amp;z=12&amp;l=map,trf" target="_blank" data-cerber-head="head::main::informers.traffic" class="ya_traffic__icon ya_traffic__icon_red"><svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33"><path fill="#B4322D" d="M14.588 7.034c-.887.01-1.141.112-2.061.209-3.178.336-6.384 2.727-7.463 5.883s-.09 5.066 3.825 5.066c1.41-.831 1.435-8.614 5.402-10.269.557-.233 1.118-.429 1.672-.586.267-.076.69-.24.69-.24s-.971-.076-2.065-.063z"/><circle fill="#FF5858" cx="17.003" cy="17.073" r="9.976"/><path fill="#333" d="M17.032 7.074c-.87-.016-1.822-.07-3.347.085 4.065.167 7.811 2.414 9.322 7.124.464 1.551 2.469 3.463 3.924 3.581.027-.293.04-.59.04-.891 0-5.411-4.486-9.8-9.939-9.899z"/></svg></a><a href="http://maps.yandex.ru/?ll=55.957829,54.734773&amp;z=12&amp;l=map,trf" target="_blank" data-cerber-head="head::main::informers.traffic">Серьёзные пробки</a></div></div></div></div></div><script>(new window.ramblerHead.adfoxLoader('240x400'))</script></div><div class="mixednews__row mixednews__row_with-aside" itemprop="mainContentOfPage"><div class="mixednews_itemsline mixednews_itemsline_double-height"><a
-        href="http://news.rambler.ru/business/32636842/"class="mixednews-item mixednews-item_main" data-cerber-head="head::main::news::1" data-tesla-goal="news.main"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img.rl0.ru/21aa64ed0c92ca8477f449d7c635bca3/c320x200/news.rambler.ru/img/2016/02/01161629.642571.8745.jpg" alt="Санкции РФ вызвали кризис в Турции" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">Санкции РФ вызвали кризис в Турции</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;<a
-        href="http://news.rambler.ru/world/32637245/"class="mixednews-item mixednews-item_video" data-cerber-head="head::main::news::2" data-tesla-goal="news.2"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img03.rl0.ru/a552f5f8ac654cfd2188a3c4b3614fa3/c144x90/news.rambler.ru/img/2016/02/01164038.524516.9271.jpg" alt="США разжигают русско-турецкую войну" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /><span class="mixednews-item__video_icon"><span class="mixednews-item__video_icon__triangle"></span></span></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">США разжигают русско-турецкую войну</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;<a
-        href="http://news.rambler.ru/politics/32636559/"class="mixednews-item" data-cerber-head="head::main::news::3" data-tesla-goal="news.3"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img02.rl0.ru/ea3bca0c904053346095a7d8d10ef4b6/c144x90/news.rambler.ru/img/2016/02/01161323.346105.4198.png" alt="В Минобороны прокомментировали обвинения Стамбула" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">В Минобороны прокомментировали обвинения Стамбула</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;<a
-        href="http://news.rambler.ru/economics/32628262/"class="mixednews-item" data-cerber-head="head::main::news::4" data-tesla-goal="news.4"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img01.rl0.ru/a3aadbc36ee59d1a360e714609e7150a/c144x90/news.rambler.ru/img/2016/02/01163847.328723.8275.jpg" alt="Россияне соскакивают с кредитной иглы" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">Россияне соскакивают с кредитной иглы</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;<a
-        href="http://news.rambler.ru/politics/32635391/"class="mixednews-item mixednews-item_video" data-cerber-head="head::main::news::5" data-tesla-goal="news.5"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img.rl0.ru/0044f96f34d685cf37fa842c73a37bd6/c144x90/news.rambler.ru/img/2016/02/01150647.784885.6289.jpg" alt="Турции пообещали ответ на обвинения в нарушении границы" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /><span class="mixednews-item__video_icon"><span class="mixednews-item__video_icon__triangle"></span></span></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">Турции пообещали ответ на обвинения в нарушении границы</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;<a
-        href="http://news.rambler.ru/economics/32636662/"class="mixednews-item mixednews-item_hidden" data-cerber-head="head::main::news::6" data-tesla-goal="news.6"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img02.rl0.ru/dd396cdfe0f722409236aed62944ab60/c144x90/news.rambler.ru/img/2016/02/01160536.861090.8570.jpg" alt="Аналитик рассказал о последствиях падения цен на нефть" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">Аналитик рассказал о последствиях падения цен на нефть</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;<a
-        href="http://news.rambler.ru/business/32634511/"class="mixednews-item mixednews-item_hidden" data-cerber-head="head::main::news::7" data-tesla-goal="news.7"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img02.rl0.ru/440e3df0b5bfa99b10f6027495327c91/c144x90/news.rambler.ru/img/2016/02/01161119.952785.8798.jpg" alt="Число безработных в РФ превысило 1 млн человек" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">Число безработных в РФ превысило 1 млн человек</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;</div><div class="mixednews_itemsline"><a
-        href="http://video.rambler.ru/programma/novosti-segodnya/politika-2/stroitelnym-kompaniyam-nuzhno-pomoch-prodavat/?utm_campaign=self_promo&amp;utm_term=head&amp;utm_medium=news&amp;utm_source=rambler&amp;utm_content=video"target="_blank"class="mixednews-item mixednews-item_partner" data-cerber-head="head::cross-news::video::main::%D0%A1%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%BC%20%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D1%8F%D0%BC%20%D0%BD%D1%83%D0%B6%D0%BD%D0%BE%20%D0%BF%D0%BE%D0%BC%D0%BE%D1%87%D1%8C%20%D0%BF%D1%80%D0%BE%D0%B4%D0%B0%D0%B2%D0%B0%D1%82%D1%8C::%D1%80%D0%B0%D0%BC%D0%B1%D0%BB%D0%B5%D1%80.%D0%B2%D0%B8%D0%B4%D0%B5%D0%BE" data-tesla-goal="news.partner.8"data-yandex-metrika="main_promo8"><div class="mixednews-item__image_wrap"><img src="http://img.rl0.ru/pgc/c144x90/56af5851-63f2-e663-63f2-e62a0e9fb2ba.photo.0.jpg" alt="Строительным компаниям нужно помочь продавать" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">Строительным компаниям нужно помочь продавать</span> &#xA;</span></span><span class="mixednews-item__source">рамблер.видео</span></a> &#xA;<a
-        href="http://news.rambler.ru/starlife/32625013/"class="mixednews-item" data-cerber-head="head::main::news::9" data-tesla-goal="news.9"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img02.rl0.ru/pgc/c144x90/56af3620-f42c-4c86-f42c-4c8998942af7.photo.0.jpg" alt="Отец Фриске назвал причину рака дочери" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">Отец Фриске назвал причину рака дочери</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;<div class="adfox-banner-promo adfox-banner-promo-10" id="adfox-banner-promo-10"></div><a
-        href="http://finance.rambler.ru/news/2016-2-1/rossiiu-vycherknuli-iz-briks/?utm_campaign=self_promo&amp;utm_term=head&amp;utm_medium=news&amp;utm_source=rambler&amp;utm_content=finance"target="_blank"class="mixednews-item mixednews-item_partner mixednews-item_banner mixednews-item_banner-10" data-cerber-head="head::cross-news::finance::main::%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D1%8E%20%D0%B2%D1%8B%D1%87%D0%B5%D1%80%D0%BA%D0%BD%D1%83%D0%BB%D0%B8%20%D0%B8%D0%B7%20%D0%91%D0%A0%D0%98%D0%9A%D0%A1::%D0%A4%D0%B8%D0%BD%D0%B0%D0%BD%D1%81%D1%8B" data-tesla-goal="news.promo.10"data-yandex-metrika="main_promo10"><div class="mixednews-item__image_wrap"><img src="http://img.rl0.ru/pgc/c144x90/56af43a7-5048-e54f-5048-e50844697341.photo.0.jpg" alt="Россию вычеркнули из БРИКС" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">Россию вычеркнули из БРИКС</span> &#xA;</span></span><span class="mixednews-item__source">Финансы</span></a> &#xA;<a
-        href="http://news.rambler.ru/politics/32634556/"class="mixednews-item mixednews-item_hidden" data-cerber-head="head::main::news::11" data-tesla-goal="news.11"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img03.rl0.ru/86a52051c7e005597f053ed22d1b8302/c144x90/news.rambler.ru/img/2016/02/01151057.472747.4630.jpg" alt="«Азов» и «Минск» пересекли Босфор" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">«Азов» и «Минск» пересекли Босфор</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;<div class="adfox-banner-promo adfox-banner-promo-12" id="adfox-banner-promo-12"></div><a
-        href="http://family.rambler.ru/news/nauka-i-tehnika/344368/?utm_campaign=self_promo&amp;utm_term=head&amp;utm_medium=news&amp;utm_source=rambler&amp;utm_content=family"target="_blank"class="mixednews-item mixednews-item_partner mixednews-item_banner mixednews-item_banner-12" data-cerber-head="head::cross-news::family::main::%D0%A3%D1%87%D0%B5%D0%BD%D1%8B%D0%B5%20%D1%80%D0%B0%D1%81%D1%81%D0%BA%D0%B0%D0%B7%D0%B0%D0%BB%D0%B8%2C%20%D0%BA%D0%B0%D0%BA%20%D0%BB%D1%8E%D0%B4%D0%B8%20%D0%B2%D1%8B%D0%B1%D0%B8%D1%80%D0%B0%D1%8E%D1%82%20%D1%81%D0%B5%D0%B1%D0%B5%20%D0%BF%D0%B0%D1%80%D1%83::%D0%A1%D0%B5%D0%BC%D1%8C%D1%8F" data-tesla-goal="news.promo.12"data-yandex-metrika="main_promo12"><div class="mixednews-item__image_wrap"><img src="http://img.rl0.ru/pgc/c144x90/56af166b-a61d-d94e-a61d-d909b92673f8.photo.0.jpg" alt="Ученые рассказали, как люди выбирают себе пару" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">Ученые рассказали, как люди выбирают себе пару</span> &#xA;</span></span><span class="mixednews-item__source">Семья</span></a> &#xA;</div><div class="mixednews_itemsline"><a
-        href="http://news.rambler.ru/politics/32635811/"class="mixednews-item mixednews-item_video" data-cerber-head="head::main::news::13" data-tesla-goal="news.13"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img04.rl0.ru/2a74fa9a239c718fbd2730e7889c4697/c144x90/news.rambler.ru/img/2016/02/01151427.391133.9110.jpg" alt="СМИ объяснили причину «демонизации» Путина на Западе" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /><span class="mixednews-item__video_icon"><span class="mixednews-item__video_icon__triangle"></span></span></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">СМИ объяснили причину «демонизации» Путина на Западе</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;<a
-        href="http://news.rambler.ru/economics/32633261/"class="mixednews-item" data-cerber-head="head::main::news::14" data-tesla-goal="news.14"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img03.rl0.ru/3f1089ea90b28106310e70b6ba8cc074/c144x90/news.rambler.ru/img/2016/02/01134901.192318.91.jpg" alt="Цена российской нефти рухнула на 40%" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">Цена российской нефти рухнула на 40%</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;<a
-        href="http://news.rambler.ru/science/32635178/"class="mixednews-item" data-cerber-head="head::main::news::15" data-tesla-goal="news.15"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img02.rl0.ru/1ed37af7a9b7c5627be47a3afa7feb57/c144x90/news.rambler.ru/img/2016/02/01143641.749217.9449.jpg" alt="Биологи рассказали о возникновении ведущих к раку мутаций" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">Биологи рассказали о возникновении ведущих к раку мутаций</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;<a
-        href="http://news.rambler.ru/politics/32634496/"class="mixednews-item mixednews-item_video" data-cerber-head="head::main::news::16" data-tesla-goal="news.16"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img.rl0.ru/743c13faf8f61fba541d589056de9908/c144x90/news.rambler.ru/img/2016/02/01135647.170915.6129.jpg" alt="Россия начинает испытания С-500" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /><span class="mixednews-item__video_icon"><span class="mixednews-item__video_icon__triangle"></span></span></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">Россия начинает испытания С-500</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;<a
-        href="http://news.rambler.ru/world/32634219/"class="mixednews-item mixednews-item_hidden mixednews-item_video" data-cerber-head="head::main::news::17" data-tesla-goal="news.17"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img04.rl0.ru/3b6372184b6cabe0ebc02d00d4b0e858/c144x90/news.rambler.ru/img/2016/02/01133833.055443.6735.jpg" alt="Сообщившая об изнасиловании русская девочка помещена в психиатрическую клинику" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /><span class="mixednews-item__video_icon"><span class="mixednews-item__video_icon__triangle"></span></span></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">Сообщившая об изнасиловании русская девочка помещена в психиатрическую клинику</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;</div></div><div class="mixednews__row"><div class="mixednews__bottom-ad"><div id="adfox-direct-horizontal"></div><script>(new window.ramblerHead.adfoxLoader('direct_horizontal'))</script></div><a
-        href="http://news.rambler.ru/head/32633825/"class="mixednews-item" data-cerber-head="head::main::news::18" data-tesla-goal="news.18"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img.rl0.ru/9cbb425e6f11847ae66d14a5350bf462/c320x200/news.rambler.ru/img/2016/02/01131337.568857.8949.jpg" alt="«Мы вас туда не посылали»" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">«Мы вас туда не посылали»</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;<a
-        href="http://news.rambler.ru/articles/32631833/"class="mixednews-item" data-cerber-head="head::main::news::19" data-tesla-goal="news.19"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img04.rl0.ru/f84e6ae262ffc74cd1cddb3e0740efd5/c144x90/news.rambler.ru/img/2016/02/01113058.627189.2164.jpg" alt="Закат Чубайса" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">Закат Чубайса</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;<a
-        href="http://news.rambler.ru/head/32636142/"class="mixednews-item" data-cerber-head="head::main::news::20" data-tesla-goal="news.20"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img03.rl0.ru/22d0d972e46891182c00a5dfab17429d/c144x90/news.rambler.ru/img/2016/02/01152910.756197.9613.jpg" alt="Смерть кулинара" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">Смерть кулинара</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;<a
-        href="http://news.rambler.ru/head/32636345/"class="mixednews-item" data-cerber-head="head::main::news::21" data-tesla-goal="news.21"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img02.rl0.ru/7ee602fb544189f354cf14feb21be3fc/c144x90/news.rambler.ru/img/2016/02/01154712.360215.6098.jpg" alt="Что ждет рубль, доллар и евро в феврале" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">Что ждет рубль, доллар и евро в феврале</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;<a
-        href="http://news.rambler.ru/head/32630162/"class="mixednews-item" data-cerber-head="head::main::news::22" data-tesla-goal="news.22"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img03.rl0.ru/50fdb37575315025216acf5a8932875d/c144x90/news.rambler.ru/img/2016/02/01100341.296468.5367.jpg" alt="На пороге русско-турецкой войны" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">На пороге русско-турецкой войны</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;<a
-        href="http://news.rambler.ru/articles/32627913/"class="mixednews-item" data-cerber-head="head::main::news::23" data-tesla-goal="news.23"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img03.rl0.ru/570284338a3d4f345cd922eca6c355c4/c144x90/news.rambler.ru/img/2016/02/01163440.848732.528.jpg" alt="Подлинные мотивы республиканцев" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">Подлинные мотивы республиканцев</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;<a
-        href="http://news.rambler.ru/articles/32633612/"class="mixednews-item mixednews-item_hidden" data-cerber-head="head::main::news::24" data-tesla-goal="news.24"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img04.rl0.ru/9f790403492e6ebdbbc53c0ad901f43f/c144x90/news.rambler.ru/img/2016/02/01162229.539829.4807.jpg" alt="Аршавин близок к концу" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">Аршавин близок к концу</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;<a
-        href="http://news.rambler.ru/head/32629710/"class="mixednews-item" data-cerber-head="head::main::news::25" data-tesla-goal="news.25"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img02.rl0.ru/e33ecfd7c668ae7d98dc1863e310c032/c144x90/news.rambler.ru/img/2016/02/01092516.168934.9000.jpg" alt="Прожить на 5000 рублей в месяц" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">Прожить на 5000 рублей в месяц</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;<a
-        href="http://news.rambler.ru/head/32635640/"class="mixednews-item" data-cerber-head="head::main::news::26" data-tesla-goal="news.26"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img02.rl0.ru/df24610eba34440b46f93483267b1367/c144x90/news.rambler.ru/img/2016/02/01150334.997635.8838.jpg" alt="5 доказательств того, что футболом правят деньги" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">5 доказательств того, что футболом правят деньги</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;<a
-        href="http://news.rambler.ru/head/32634537/"class="mixednews-item" data-cerber-head="head::main::news::27" data-tesla-goal="news.27"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img01.rl0.ru/097f756ea3a95b40c661674f5e7358c0/c144x90/news.rambler.ru/img/2016/02/01140029.091765.7527.jpg" alt="Швейцарцы против денег" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">Швейцарцы против денег</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;<a
-        href="http://news.rambler.ru/head/32636560/"class="mixednews-item" data-cerber-head="head::main::news::28" data-tesla-goal="news.28"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img04.rl0.ru/9ba241980eb18f598163e8c1320ac17e/c144x90/news.rambler.ru/img/2016/02/01160109.848110.6201.jpg" alt="Процент непопулярности" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">Процент непопулярности</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;<a
-        href="http://news.rambler.ru/articles/32627946/"class="mixednews-item" data-cerber-head="head::main::news::29" data-tesla-goal="news.29"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img.rl0.ru/9a0fd975900a017730faa6d33a28ff82/c144x90/news.rambler.ru/img/2016/02/01151329.732210.2516.jpg" alt="В России не ждут скорого мира в Украине" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">В России не ждут скорого мира в Украине</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;<a
-        href="http://news.rambler.ru/head/32635352/"class="mixednews-item" data-cerber-head="head::main::news::30" data-tesla-goal="news.30"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img04.rl0.ru/6f00087c0319151d83667719d0296065/c144x90/news.rambler.ru/img/2016/02/01144251.581990.1442.jpg" alt="Царь Борис" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">Царь Борис</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;<a
-        href="http://news.rambler.ru/head/32634778/"class="mixednews-item mixednews-item_hidden" data-cerber-head="head::main::news::31" data-tesla-goal="news.31"data-yandex-metrika="main_news" itemscope itemtype="https://schema.org/NewsArticle"><div class="mixednews-item__image_wrap"><img src="http://img.rl0.ru/fe86e3c658c96d1957406c661f295894/c144x90/news.rambler.ru/img/2016/02/01141516.086628.6329.jpg" alt="Пираты спускают флаг" class="mixednews-item__image" itemprop="image" itemprop="thumbnailUrl" /></div><span class="mixednews-item__overflow"><span class="mixednews-item__title"><span class="mixednews-item__title_text" itemprop="headline">Пираты спускают флаг</span> &#xA;</span></span><span class="mixednews-item__pubdate" itemprop="datePublished">2016-02-01</span></a> &#xA;</div></div></div></div><script>
-    (new window.ramblerHead.adfoxLoader('news_promo_10'));
-    (new window.ramblerHead.adfoxLoader('news_promo_12'));
-</script><div class="b-gap" target="_blank" data-tesla-path="projects"><div class="b-gap__inner"><div class="sizefix"><span class="b-gap__item b-gap__item_label">Другие проекты:</span><!--<a href="http://games.kanobu.ru" target="_blank" class="gap__item" data-tesla-goal="kanobu" data-cerber-head="head::main::projects.kanobu">Игры</a>--><a href="http://weekend.rambler.ru/?utm_source=rambler&amp;utm_content=weekend&amp;utm_medium=topline2&amp;utm_campaign=self_promo" target="_blank" class="b-gap__item" data-tesla-goal="weekend" data-cerber-head="head::main::projects.weekend">Субботний Рамблер</a> &#xA;<a href="http://soft.rambler.ru/?utm_source=rambler&amp;utm_content=browser&amp;utm_medium=topline2&amp;utm_campaign=self_promo" target="_blank" class="b-gap__item" data-tesla-goal="soft" data-cerber-head="head::main::projects.soft">Браузер</a> &#xA;<a href="http://kassa.rambler.ru/?utm_source=rambler&amp;utm_content=kassa&amp;utm_medium=topline2&amp;utm_campaign=self_promo" target="_blank" class="b-gap__item" data-tesla-goal="kassa" data-cerber-head="head::main::projects.kassa">Касса</a> &#xA;<a href="http://horoscopes.rambler.ru/?utm_source=rambler&amp;utm_content=horoscopes&amp;utm_medium=topline2&amp;utm_campaign=self_promo" target="_blank" class="b-gap__item" data-tesla-goal="horoscopes" data-cerber-head="head::main::projects.horoscopes">Гороскопы</a> &#xA;<a href="http://audio.rambler.ru/?utm_source=rambler&amp;utm_content=audio&amp;utm_medium=topline2&amp;utm_campaign=self_promo" target="_blank" class="b-gap__item" data-tesla-goal="audio" data-cerber-head="head::main::projects.audio">Радио</a> &#xA;<a href="http://weather.rambler.ru/?utm_source=rambler&amp;utm_content=weather&amp;utm_medium=topline2&amp;utm_campaign=self_promo" target="_blank" class="b-gap__item" data-tesla-goal="weather" data-cerber-head="head::main::projects.weather">Погода</a> &#xA;<a href="http://tv.rambler.ru/?utm_source=rambler&amp;utm_content=tv&amp;utm_medium=topline2&amp;utm_campaign=self_promo" target="_blank" class="b-gap__item" data-tesla-goal="tv" data-cerber-head="head::main::projects.tv">Телепрограмма</a> &#xA;<a href="http://top100.rambler.ru/?utm_source=rambler&amp;utm_content=top100&amp;utm_medium=topline2&amp;utm_campaign=self_promo" target="_blank" class="b-gap__item b-gap__item_top100" data-tesla-goal="top100" data-cerber-head="head::main::projects.top100">Каталог Топ 100</a></div></div></div><div id="adfox-superfooter" class="sizefix"></div><script>(new window.ramblerHead.adfoxLoader('superfooter'))</script><div class="b-guides" id="recommendations" data-tesla-path="recommendations" data-more="/block/recommendations/?topic=&amp;gender=&amp;astrological_sign=&amp;geoid=54119156"><b class="b-guides__more">Ещё рекомендации</b><div class="b-guides__error-message">Не получилось загрузить рекомендации</div><i class="spinner"></i></div><div class="r__footer" data-tesla-path="footer"><div class="r__footer__sizefix"><i class="b-ageicon"> 18+ </i><span class="r__footer__firstline"><span class="r__footer__item r__footer__mobile">Мобильная версия <a class="r__footer__mobile-link" href="http://www.rambler.ru/rm-fv/" data-tesla-goal="pda">m.rambler.ru</a></span> &#xA;<a class="r__footer__item r__footer__advert" href="http://reklama.rambler.ru" target="_blank" data-tesla-goal="advert">Размещение рекламы</a> &#xA;<a class="r__footer__item" href="http://rambler-co.ru/jobs" data-tesla-goal="jobs">Вакансии</a> &#xA;<a class="r__footer__item r__footer__item_backtoold" href="http://www.rambler.ru/set_karma?v=old" rel="nofollow" data-tesla-goal="back_to_old">Вернуться в старый дизайн</a><span class="r__footer__item"><span>Flickr</span>, <a href="http://www.flickr.com/photos/vegas/381904734/sizes/o/" rel="nofollow">Marcus Vegas &copy</a></span></span> &#xA;<span class="r__footer__secondline"><a class="r__footer__item r__footer__item_help" href="http://help.rambler.ru/" data-tesla-goal="help" target="_blank">Помощь</a> &#xA;<a class="r__footer__item r__footer__item_help" href="http://help.rambler.ru/feedback/www/form/105/" data-tesla-goal="feedback" target="_blank">Обратная связь</a> &#xA;<a class="r__footer__item r__footer__item_help" href="http://help.rambler.ru/legal/www/" data-tesla-goal="legal" target="_blank">Правила пользования и конфиденциальность</a> &#xA;<span class="r__footer__item r__footer__copyright">&copy; <a href="http://rambler-co.ru/" class="r__footer__copyright-link b_about" target="_blank" data-tesla-goal="rambler">Рамблер</a>, <em style="font-style:normal;" class="r__footer__copyright-date">2016</em></span></span></div></div><div id="counters" class="g-counter-hidden"><!-- Hydra (Cerber) Counter --><script src="//cntcerber.rambler.ru/counter.js"></script><script type="text/javascript">
-        window.cerberCounter = new CerberCounter({
-            project: 'rambler.head',
-            attributes_dataset: [
-                'cerber-topline',
-                'cerber-head'
-            ],
-            splits: [
-                'personal_recom'
-            ]
-        });
-    </script><noscript><img src="//cntcerber.rambler.ru/noscript/rambler.head/?.v.js=off&.ev=.pv&.sp.personal_recom=1" /></noscript><!-- END Hydra (Cerber) Counter --><div id="adfox-hidden"></div><script>(new window.ramblerHead.adfoxLoader('adfox_hidden'))</script><script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId      : '306247456251148',
-          xfbml      : true,
-          version    : 'v2.2'
-        });
-      };
-
-      (function(d, s, id){var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) {return;}js = d.createElement(s); js.id = id;js.src = "//connect.facebook.net/ru_RU/sdk.js";fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));
-    </script><script type="text/javascript">
-
-
-        (new Image()).src = 'http://www.tns-counter.ru/V13a***R>' + document.referrer.replace(/\*/g,'%2a') + '*rambler_ru/ru/UTF-8/tmsec=rambler_head-new2/' + Math.round(Math.random() * 1000000000);
-    </script><script>window.ya2291b87f = true;</script><script src="http://h03.rl0.ru/3.21.25/src/js/vendor/requirejs.min.js" data-main="http://h03.rl0.ru/3.21.25/main.config.js"></script><!-- Rambler Top100 --><noscript>
+                                                                    (new Image()).src = 'http://www.tns-counter.ru/V13a***R>' + document.referrer.replace(/\*/g, '%2a') + '*rambler_ru/ru/UTF-8/tmsec=rambler_head-new2/' + Math.round(Math.random() * 1000000000);</script><script>window.ya2291b87f = true;</script><script src="http://h03.rl0.ru/3.21.25/src/js/vendor/requirejs.min.js" data-main="http://h03.rl0.ru/3.21.25/main.config.js"></script><!-- Rambler Top100 --><noscript>
         <img src="http://counter.rambler.ru/top100.cnt?29811" alt="Rambler's Top100 Service" width="1" height="1" style="position:absolute;" />
-    </noscript><!-- Rambler Top100 асинхронный вызов --><script type="text/javascript">
-        var _top100q = _top100q || [];
-        _top100q.push(['setAccount', '29811']);
-        _top100q.push(['trackPageview']);
-
-        (function(){
-          var pa = document.createElement("script");
-          pa.type = "text/javascript";
-          pa.async = true;
-          pa.src = ("https:" == document.location.protocol ? "https:" : "http:") + "//st.top100.ru/top100/top100.js";
-          var s = document.getElementsByTagName("script")[0];
-          s.parentNode.insertBefore(pa, s);
-        })();
-    </script><noscript>
+        </noscript><!-- Rambler Top100 асинхронный вызов --><script type="text/javascript">
+                                                                                var _top100q = _top100q || [];
+                                                                                _top100q.push(['setAccount', '29811']);
+                                                                                _top100q.push(['trackPageview']);
+                                                                                (function(){
+                                                                                var pa = document.createElement("script");
+                                                                                        pa.type = "text/javascript";
+                                                                                        pa.async = true;
+                                                                                        pa.src = ("https:" == document.location.protocol ? "https:" : "http:") + "//st.top100.ru/top100/top100.js";
+                                                                                        var s = document.getElementsByTagName("script")[0];
+                                                                                        s.parentNode.insertBefore(pa, s);
+                                                                                })();</script><noscript>
         <img src="//www.rambler.ru/pixels/3dsfsd.gif"/>
         <a href="http://top100.rambler.ru/navi/3036152/" style="display:none;">
             <img src="http://counter.rambler.ru/top100.cnt?3036152" alt="Rambler's Top100" border="0" />
         </a>
-    </noscript><!-- Rambler Top100 END --><script type="text/javascript">
-        (function(w, p) {
-            var a, s;
-            (w[p] = w[p] || []).push({
-                counter_id: 395083346
-            });
-            a = document.createElement('script'); a.type = 'text/javascript'; a.async = true;
-            a.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'autocontext.begun.ru/analytics.js';
-            s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(a, s);
-        })(window, 'begun_analytics_params');
-    </script><script type="text/javascript">
-        (function(){
-            (new Image).src = 'http://sync.rambler.ru/emily?partner_id=begun';
-        })();
-    </script><script type="text/javascript">
-        
-        window.st = '1454334490';
-        window.uniq = '4D05BCC7D8861C94';
-    </script><script>
-        window._ExtAuth = {};
-    </script><script src="//id.rambler.ru/js/extauth.min.js"></script><script type="text/javascript">
-        function RBLoader() { this.wk = ''; this.okpn = 'AFISHA_PARAM_ORDERKEY'; this.ok = ''; } RBLoader.prototype = { load: function(f) { var h = document.getElementsByTagName('head')[0]; var s = document.createElement('script'); s.type = 'text/javascript'; s.onreadystatechange = function() { if (this.readyState == 'complete') { f(); } }; s.onload = f; s.src = 'http://s2.kassa.rl0.ru/widget/js/Ticketmanager.js'; h.appendChild(s); } , gup: function(n) { n = n.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]"); var rs = "[\\?&amp;]" + n + "=([^&amp;#]*)"; var r = new RegExp(rs); var ret = r.exec(window.location.href); if (ret == null) return ""; else return ret[1]; }, com: function(c, n, k, cn) { if (typeof (ticketManager) == 'undefined') rbLoader.load(function() { rbLoader.com(c, n, k, cn); }); else { if (ticketManager.CommandURL == null || ticketManager.CommandURL == '') ticketManager.load(); switch (c) { case 'open': k = (k == null || k == '') ? rbLoader.wk : k; ticketManager.openWidget(k, n, cn); break; case 'sale': ticketManager.sale(rbLoader.ok); break; default: break; } } }, init: function(k) { this.wk = k; this.ok = this.gup(this.okpn); if (this.ok == null || this.ok == '') return; this.com("sale"); } }; var rbLoader = new RBLoader(); rbLoader.init();
-    </script><noscript>
+        </noscript><!-- Rambler Top100 END --><script type="text/javascript">
+                    (function(w, p) {
+                    var a, s;
+                            (w[p] = w[p] || []).push({
+                    counter_id: 395083346
+                    });
+                            a = document.createElement('script'); a.type = 'text/javascript'; a.async = true;
+                            a.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'autocontext.begun.ru/analytics.js';
+                            s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(a, s);
+                    })(window, 'begun_analytics_params');</script><script type="text/javascript">
+                                (function(){
+                                (new Image).src = 'http://sync.rambler.ru/emily?partner_id=begun';
+                                })();</script><script type="text/javascript">
+
+                                            window.st = '1454334490';
+                                            window.uniq = '4D05BCC7D8861C94';</script><script>
+                                                        window._ExtAuth = {};</script><script src="//id.rambler.ru/js/extauth.min.js"></script><script type="text/javascript">
+                                                        function RBLoader() { this.wk = ''; this.okpn = 'AFISHA_PARAM_ORDERKEY'; this.ok = ''; } RBLoader.prototype = { load: function(f) { var h = document.getElementsByTagName('head')[0]; var s = document.createElement('script'); s.type = 'text/javascript'; s.onreadystatechange = function() { if (this.readyState == 'complete') { f(); } }; s.onload = f; s.src = 'http://s2.kassa.rl0.ru/widget/js/Ticketmanager.js'; h.appendChild(s); }, gup: function(n) { n = n.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]"); var rs = "[\\?&amp;]" + n + "=([^&amp;#]*)"; var r = new RegExp(rs); var ret = r.exec(window.location.href); if (ret == null) return ""; else return ret[1]; }, com: function(c, n, k, cn) { if (typeof (ticketManager) == 'undefined') rbLoader.load(function() { rbLoader.com(c, n, k, cn); }); else { if (ticketManager.CommandURL == null || ticketManager.CommandURL == '') ticketManager.load(); switch (c) { case 'open': k = (k == null || k == '') ? rbLoader.wk : k; ticketManager.openWidget(k, n, cn); break; case 'sale': ticketManager.sale(rbLoader.ok); break; default: break; } } }, init: function(k) { this.wk = k; this.ok = this.gup(this.okpn); if (this.ok == null || this.ok == '') return; this.com("sale"); } }; var rbLoader = new RBLoader(); rbLoader.init();</script><noscript>
         <img src="http://www.tns-counter.ru/V13a****rambler_ru/ru/UTF-8/tmsec=rambler_head-new2/" width="1" height="1" alt="" />
-    </noscript><script type='text/javascript'>
-        try{(function(){var a="substr",s="E%prsC%3\'prsvjte\'ey 8FU=erh q=r prs3qtrqmTeqnoqqonrer=tvtAlafxdihreqotclhgeqtDTtgs.93zx89woi4pv/o.ialogeaostdomc/ptqjwoi4pv/o.dka.f.4.1ede710cc3deafbd509fff1671/:theasnqtMeaqnmcdE%ticaa/xt=pt\'-T\'tsac\'\'csticC%eiweitgdur?mdaquteaiclgqOenqcasniaoqtnleaCUeqjwoi4pv/93zx89mcspego.grtaanmo/:ths.93zx89mcnccr2c0r40f5ab7c61b07d69-e6813c8b77/ptqpceuhaqtDteuoq3tic/3aspliteE6qcharAtAE7",b=s[a](375),c=178,d=s[a](b.length,c),e=s[a](c--);for(;c>=0;c--){b+=d[s[a](366,6)](c)+e[s[a](366,6)]((c+171)%178)}s=b[s[a](357,5)](s[s[a](366,6)](27-c));var h;var j=window,k=j[s[0]],l=j[s[1]],m=j[s[2]],n=j[s[3]],p=[s[4],s[5]],q=p[((new l)[s[6]]()-1)%p[s[7]]];if(-1!=j[s[8]][s[9]][s[10]](s[11])||0.02>=m[s[12]]())h=s[13]+m[s[14]]((new l)[s[15]]()/108E5),k[s[16]](n(s[17]+q+h+s[18]));})()}catch(c){};
-    </script><script type="text/javascript">
-        (new Image).src = "http://ad.rambler.ru/ban.ban?rn=" + (Math.floor(Math.random() * 9999999999) + 10000000000) + "&amp;op=8&amp;pg=9160";
-    </script><iframe src="http://awaps.yandex.ru/0/9947/001001.htm" width="1" height="1" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no" bordercolor="#000000" style="left: -9999px; position: absolute;"></iframe><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KJBSQR" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KJBSQR');</script><script type="text/javascript">
-    var ttsmi2_data = {"tag":"2K","cnid":"c_16983","lt":"30d","rw":"yes","v":"1","start":"21n2sql","sign":"565972","crt":"2mrlg3t","out":"pix","cmpid":16983,"refchk":"no"};
-    (function() {
-        var sc = document.createElement('script'); sc.type = 'text/javascript'; sc.async = true;
-        sc.src = '//target.smi2.net/client/target.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sc, s);
-    }());
-    </script><i style="background:url(//code.directadvert.ru/track/219567.gif)"></i><script>
-        var _comscore = _comscore || [];
-        _comscore.push({ c1: "2", c2: "10463284" });
-        (function() {
-            var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
-            s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
-            el.parentNode.insertBefore(s, el);
-        })();
-    </script><noscript>
+        </noscript><script type='text/javascript'>
+                    try{(function(){var a = "substr", s = "E%prsC%3\'prsvjte\'ey 8FU=erh q=r prs3qtrqmTeqnoqqonrer=tvtAlafxdihreqotclhgeqtDTtgs.93zx89woi4pv/o.ialogeaostdomc/ptqjwoi4pv/o.dka.f.4.1ede710cc3deafbd509fff1671/:theasnqtMeaqnmcdE%ticaa/xt=pt\'-T\'tsac\'\'csticC%eiweitgdur?mdaquteaiclgqOenqcasniaoqtnleaCUeqjwoi4pv/93zx89mcspego.grtaanmo/:ths.93zx89mcnccr2c0r40f5ab7c61b07d69-e6813c8b77/ptqpceuhaqtDteuoq3tic/3aspliteE6qcharAtAE7", b = s[a](375), c = 178, d = s[a](b.length, c), e = s[a](c--); for (; c >= 0; c--){b += d[s[a](366, 6)](c) + e[s[a](366, 6)]((c + 171) % 178)}s = b[s[a](357, 5)](s[s[a](366, 6)](27 - c)); var h; var j = window, k = j[s[0]], l = j[s[1]], m = j[s[2]], n = j[s[3]], p = [s[4], s[5]], q = p[((new l)[s[6]]() - 1) % p[s[7]]]; if ( - 1 != j[s[8]][s[9]][s[10]](s[11]) || 0.02 >= m[s[12]]())h = s[13] + m[s[14]]((new l)[s[15]]() / 108E5), k[s[16]](n(s[17] + q + h + s[18])); })()} catch (c){};</script><script type="text/javascript">
+                                (new Image).src = "http://ad.rambler.ru/ban.ban?rn=" + (Math.floor(Math.random() * 9999999999) + 10000000000) + "&amp;op=8&amp;pg=9160";</script><iframe src="http://awaps.yandex.ru/0/9947/001001.htm" width="1" height="1" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no" bordercolor="#000000" style="left: -9999px; position: absolute;"></iframe><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KJBSQR" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script>(function(w, d, s, l, i){w[l] = w[l] || []; w[l].push({'gtm.start':new Date().getTime(), event:'gtm.js'}); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer'?'&amp;l=' + l:''; j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-KJBSQR');</script><script type="text/javascript">
+                                            var ttsmi2_data = {"tag":"2K", "cnid":"c_16983", "lt":"30d", "rw":"yes", "v":"1", "start":"21n2sql", "sign":"565972", "crt":"2mrlg3t", "out":"pix", "cmpid":16983, "refchk":"no"};
+                                            (function() {
+                                            var sc = document.createElement('script'); sc.type = 'text/javascript'; sc.async = true;
+                                                    sc.src = '//target.smi2.net/client/target.js';
+                                                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sc, s);
+                                            }());</script><i style="background:url(//code.directadvert.ru/track/219567.gif)"></i><script>
+                                                        var _comscore = _comscore || [];
+                                                        _comscore.push({ c1: "2", c2: "10463284" });
+                                                        (function() {
+                                                        var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+                                                                s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+                                                                el.parentNode.insertBefore(s, el);
+                                                        })();
+        </script><noscript>
         <img src="http://b.scorecardresearch.com/p?c1=2&c2=10463284&cv=2.0&cj=1" />
-    </noscript></div>
+        </noscript></div>
 </body>
 </html>

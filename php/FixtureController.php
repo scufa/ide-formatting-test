@@ -142,18 +142,22 @@ class FixtureController extends \yii\console\controllers\FixtureController
      * @var string Alias to the template path, where all tables templates are stored.
      */
     public $templatePath = '@tests/unit/templates/fixtures';
+
     /**
      * @var string Alias to the fixture data path, where data files should be written.
      */
     public $fixtureDataPath = '@tests/unit/fixtures/data';
+
     /**
      * @var string Language to use when generating fixtures data.
      */
     public $language;
+
     /**
      * @var integer total count of data per fixture. Defaults to 2.
      */
     public $count = 2;
+
     /**
      * @var array Additional data providers that can be created by user and will be added to the Faker generator.
      * More info in [Faker](https://github.com/fzaninotto/Faker.) library docs.
@@ -165,13 +169,13 @@ class FixtureController extends \yii\console\controllers\FixtureController
      */
     private $_generator;
 
-
     /**
      * @inheritdoc
      */
     public function options($actionID)
     {
-        return array_merge(parent::options($actionID), [
+        return array_merge(parent::options($actionID),
+            [
             'templatePath', 'language', 'fixtureDataPath', 'count'
         ]);
     }
@@ -280,7 +284,7 @@ class FixtureController extends \yii\console\controllers\FixtureController
         $generatedTemplates = [];
 
         foreach ($foundTemplates as $templateName) {
-            $this->generateFixtureFile($templateName, $templatePath, $fixtureDataPath);            
+            $this->generateFixtureFile($templateName, $templatePath, $fixtureDataPath);
             $generatedTemplates[] = $templateName;
         }
 
@@ -307,8 +311,9 @@ class FixtureController extends \yii\console\controllers\FixtureController
      */
     private function notifyNoTemplatesFound()
     {
-        $this->stdout("No fixtures template files matching input conditions were found under the path:\n\n", Console::FG_RED);
-        $this->stdout("\t " . Yii::getAlias($this->templatePath) . " \n\n", Console::FG_GREEN);
+        $this->stdout("No fixtures template files matching input conditions were found under the path:\n\n",
+            Console::FG_RED);
+        $this->stdout("\t ".Yii::getAlias($this->templatePath)." \n\n", Console::FG_GREEN);
     }
 
     /**
@@ -320,7 +325,7 @@ class FixtureController extends \yii\console\controllers\FixtureController
         $this->stdout("The following fixtures template files were generated:\n\n", Console::FG_YELLOW);
 
         foreach ($templatesNames as $name) {
-            $this->stdout("\t* " . $name . "\n", Console::FG_GREEN);
+            $this->stdout("\t* ".$name."\n", Console::FG_GREEN);
         }
 
         $this->stdout("\n");
@@ -329,10 +334,10 @@ class FixtureController extends \yii\console\controllers\FixtureController
     private function notifyTemplatesCanBeGenerated($templatesNames)
     {
         $this->stdout("Template files path: ", Console::FG_YELLOW);
-        $this->stdout(Yii::getAlias($this->templatePath) . "\n\n", Console::FG_GREEN);
+        $this->stdout(Yii::getAlias($this->templatePath)."\n\n", Console::FG_GREEN);
 
         foreach ($templatesNames as $name) {
-            $this->stdout("\t* " . $name . "\n", Console::FG_GREEN);
+            $this->stdout("\t* ".$name."\n", Console::FG_GREEN);
         }
 
         $this->stdout("\n");
@@ -354,7 +359,7 @@ class FixtureController extends \yii\console\controllers\FixtureController
             $filesToSearch = [];
 
             foreach ($templatesNames as $fileName) {
-                $filesToSearch[] = $fileName . '.php';
+                $filesToSearch[] = $fileName.'.php';
             }
 
             $files = FileHelper::findFiles(Yii::getAlias($this->templatePath), ['only' => $filesToSearch]);
@@ -411,7 +416,7 @@ class FixtureController extends \yii\console\controllers\FixtureController
      */
     public function exportFixtures($fixtures)
     {
-        return "<?php\n\nreturn " . VarDumper::export($fixtures) . ";\n";
+        return "<?php\n\nreturn ".VarDumper::export($fixtures).";\n";
     }
 
     /**
@@ -438,12 +443,12 @@ class FixtureController extends \yii\console\controllers\FixtureController
         $fixtures = [];
 
         for ($i = 0; $i < $this->count; $i++) {
-            $fixtures[$i] = $this->generateFixture($templatePath . '/' . $templateName . '.php', $i);
+            $fixtures[$i] = $this->generateFixture($templatePath.'/'.$templateName.'.php', $i);
         }
 
         $content = $this->exportFixtures($fixtures);
 
-        file_put_contents($fixtureDataPath . '/'. $templateName . '.php', $content);
+        file_put_contents($fixtureDataPath.'/'.$templateName.'.php', $content);
     }
 
     /**
@@ -454,15 +459,14 @@ class FixtureController extends \yii\console\controllers\FixtureController
     public function confirmGeneration($files)
     {
         $this->stdout("Fixtures will be generated under the path: \n", Console::FG_YELLOW);
-        $this->stdout("\t" . Yii::getAlias($this->fixtureDataPath) . "\n\n", Console::FG_GREEN);
+        $this->stdout("\t".Yii::getAlias($this->fixtureDataPath)."\n\n", Console::FG_GREEN);
         $this->stdout("Templates will be taken from path: \n", Console::FG_YELLOW);
-        $this->stdout("\t" . Yii::getAlias($this->templatePath) . "\n\n", Console::FG_GREEN);
+        $this->stdout("\t".Yii::getAlias($this->templatePath)."\n\n", Console::FG_GREEN);
 
         foreach ($files as $fileName) {
-            $this->stdout("\t* " . $fileName . "\n", Console::FG_GREEN);
+            $this->stdout("\t* ".$fileName."\n", Console::FG_GREEN);
         }
 
         return $this->confirm('Generate above fixtures?');
     }
-
 }
